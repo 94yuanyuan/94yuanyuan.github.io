@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <style>
+      .home {
+        background-image: url(3200x.png);
+        background-size: contain;
+        width: 100%;
+        height: 200px;
+        flex-direction: column;
+        align-items: center;
+      }
+      .home .icon {
+        letter-spacing: 15px;
+        padding: 10px;
+        text-align: right;
+      }
+      .home img {
+        width: 100px;
+        display: block;
+        margin: auto;
+      }
+      .bread {
+        width: 900px;
+        height: 50px;
+        display: flex;
+        margin: auto;
+      }
+      .bread a {
+        margin: auto;
+        text-decoration: none;
+        color: rgb(50, 50, 50);
+      }
+      .bread a:hover {
+        color: orange;
+        transition: 0.25s;
+      }
+      .Bread» {
+        width: 200px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        margin: auto;
+      }
+      .Bread» a {
+        font-size: 18px;
+        color: rgb(50, 50, 50);
+        margin: auto;
+        text-decoration: none;
+      }
+      .Bread» a:hover {
+        color: orange;
+        transition: 0.25s;
+      }
+      .headline {
+        width: 100%;
+      }
+      .headline img {
+        width: 100%;
+        margin: auto;
+      }
+      .title::after {
+        display: flex;
+        content: "";
+        width: 25px;
+        border-bottom: 3px solid orange;
+        align-content: center;
+        margin: auto;
+      }
+      .title h2 {
+        font-size: 25px;
+        color: rgb(100, 100, 100);
+        text-align-last: center;
+        padding: 15px;
+      }
+      .tail::after {
+        display: flex;
+        content: "";
+        width: 90%;
+        border-bottom: 2px solid rgb(200, 200, 200);
+        align-content: center;
+        margin: auto;
+      }
+      .box {
+        width: 960px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .item {
+        width: 220px;
+        height: 300px;
+        padding: 10px;
+        box-sizing: border-box;
+        margin: auto;
+      }
+      .item img {
+        width: 100%;
+      }
+      .item img:hover {
+        -webkit-filter: grayscale(85%);
+        filter: grayscale(85%);
+        transition: 0.75s;
+      }
+      .text p,
+      h3 {
+        padding: 5px;
+        text-align-last: center;
+        font-size: 14px;
+        line-height: 18px;
+      }
+      .text h3 {
+        text-decoration: line-through;
+      }
+      .tailColumn {
+        width: 90%;
+        height: 200px;
+        display: flex;
+        margin: auto;
+        align-items: center;
+      }
+      .related {
+        width: 50%;
+        height: 100px;
+      }
+      .related p {
+        font-size: 25px;
+        color: rgb(50, 50, 50);
+        margin: 0 0 5px 100px;
+      }
+      .lBox {
+        width: 150px;
+        height: 100px;
+        flex-wrap: wrap;
+        margin: 0 100px;
+      }
+      .related a {
+        text-decoration: none;
+        color: rgb(50, 50, 50);
+        display: block;
+        text-align: left;
+        margin: 0 0 5px 0;
+      }
+      .rTailColumn {
+        width: 50%;
+        height: 100px;
+      }
+      .rTailColumn .contactUs {
+        font-size: 25px;
+        color: rgb(50, 50, 50);
+        margin: 0 0 5px 100px;
+      }
+      .rBox {
+        width: 350px;
+        height: 100px;
+        flex-wrap: wrap;
+        margin: 0 100px;
+      }
+      .rTailColumn a,
+      p {
+        text-decoration: none;
+        color: rgb(50, 50, 50);
+        display: block;
+        text-align: left;
+        margin: 0 0 5px 0;
+      }
+      .footer {
+        text-align: center;
+        margin: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="home">
+      <div class="icon">
+        <i class="fas fa-globe"></i>
+        <i class="fas fa-search"></i>
+        <i class="fas fa-comment"></i>
+        <i class="fas fa-user-alt"></i>
+        <i class="fas fa-shopping-basket"></i>
+      </div>
+      <img src="original.png" alt="黃阿瑪" />
+      <div class="bread">
+        <a href="#">首頁</a>
+        <a href="#">品牌故事</a>
+        <a href="#">所有商品</a>
+        <a href="#">居家生活</a>
+        <a href="#">玩具公仔</a>
+        <a href="#">瑪瑪書店</a>
+        <a href="#">手機周邊</a>
+        <a href="#">不想運動運動會</a>
+        <a href="#">Socles黑漆漆生日館</a>
+      </div>
+    </div>
+    <div class="headline">
+      <img src="3200xX.png" alt="看板" />
+    </div>
+    <div class="title">
+      <h2>新品上市</h2>
+    </div>
+    <div class="box">
+      <div class="item">
+        <img src="600x (1).png" alt="1" />
+        <div class="text">
+          <p>黃阿瑪的後宮生活《等我回家的你》隨機送後宮出遊趣明信片</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (2).png" alt="2" />
+        <div class="text">
+          <p>後宮氣球總動員 客制化手機殼 (三款材質可選 支援多型號)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (3).png" alt="3" />
+        <div class="text">
+          <p>後宮娃娃機款 客制化手機殼 (三款材質可選 支援多型號)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (4).png" alt="4" />
+        <div class="text">
+          <p>SOSO獨家款安全帽</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (5).png" alt="5" />
+        <div class="text">
+          <p>追風阿瑪(夜光版)安全帽</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (6).png" alt="6" />
+        <div class="text">
+          <p>後宮歡樂派對安全帽</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (7).png" alt="7" />
+        <div class="text">
+          <p>新年送元寶燙金貼紙</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (8).png" alt="8" />
+        <div class="text">
+          <p>純棉帽T後宮去旅行</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+    </div>
+    <div class="Bread»">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">»</a>
+    </div>
+    <div class="title">
+      <h2>不想運動運動會</h2>
+    </div>
+    <div class="box">
+      <div class="item">
+        <img src="600x (9).png" alt="9" />
+        <div class="text">
+          <p>後宮運動會三折運動錢包-黑</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (10).png" alt="10" />
+        <div class="text">
+          <p>黃阿瑪打棒球坐姿娃娃8吋</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (11).png" alt="11" />
+        <div class="text">
+          <p>黃阿瑪第一棒老帽</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (12).png" alt="12" />
+        <div class="text">
+          <p>後宮打不倒棒球隊娃娃</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (13).png" alt="13" />
+        <div class="text">
+          <p>後宮MVP純棉運動毛巾</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (14).png" alt="14" />
+        <div class="text">
+          <p>後宮棒球隊公仔</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (14).png" alt="15" />
+        <div class="text">
+          <p>後宮棒球隊公仔-全套7入</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (15).png" alt="16" />
+        <div class="text">
+          <p>瑪瑪神宮繪馬祈福便利貼</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+    </div>
+    <div class="Bread»">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">»</a>
+    </div>
+    <div class="title">
+      <h2>CreASEnse客制化手機殼</h2>
+    </div>
+    <div class="box">
+      <div class="item">
+        <img src="600x (2).png" alt="17" />
+        <div class="text">
+          <p>後宮氣球總動員 客制化手機殼 (三款材質可選 支援多型號)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (3).png" alt="18" />
+        <div class="text">
+          <p>後宮娃娃機款 客制化手機殼 (三款材質可選 支援多型號)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (16).png" alt="19" />
+        <div class="text">
+          <p>後宮捲捲睡 客制化手機殼 (三款材質可選 支援多型號)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (17).png" alt="20" />
+        <div class="text">
+          <p>瑪上招財 客制化手機殼 (三款材質可選 支援多型號)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (18).png" alt="21" />
+        <div class="text">
+          <p>阿瑪與三腳 客制化手機殼 (兩款材質可選 支援多型號)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (19).png" alt="22" />
+        <div class="text">
+          <p>阿瑪貼窗氣噗噗 客制化手機殼 (三款材質可選 支援多型號)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (20).png" alt="23" />
+        <div class="text">
+          <p>星際後宮夢遊 客制化手機殼 (四款材質可選 支援多型號)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (21).png" alt="24" />
+        <div class="text">
+          <p>後宮趴趴小花款 客制化手機殼 (三款材質可選 支援多型號)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+    </div>
+    <div class="Bread»">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">»</a>
+    </div>
+    <div class="title">
+      <h2>聯名寢具</h2>
+    </div>
+    <div class="box">
+      <div class="item">
+        <img src="600x (22).png" alt="25" />
+        <div class="text">
+          <p>【HOYACASA聯名系列】抗菌天絲兩用被床包組(單人/雙人/加大)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (23).png" alt="26" />
+        <div class="text">
+          <p>【HOYACASA聯名系列】水洗冬被運動系列-藍色(單人/雙人)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (24).png" alt="27" />
+        <div class="text">
+          <p>【HOYACASA聯名系列】水洗冬被運動系列-米色(單人/雙人)</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="600x (25).png" alt="28" />
+        <div class="text">
+          <p>【HOYACASA聯名系列】水洗枕運動系列-米色</p>
+          <h3>NT</h3>
+        </div>
+      </div>
+    </div>
+    <div class="tail">
+      <div class="Bread»">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">»</a>
+      </div>
+    </div>
+    <div class="tailColumn">
+      <div class="related">
+        <p>相關資訊</p>
+        <div class="lBox">
+          <a href="#">品牌故事</a>
+          <a href="#">退貨退款須知</a>
+          <a href="#">會員招募</a>
+          <a href="#">常見問題</a>
+          <a href="#">反詐騙公告</a>
+        </div>
+      </div>
+      <div class="rTailColumn">
+        <a href="#" class="contactUs">聯繫我們</a>
+        <div class="rBox">
+          <p>服務時間：週一至週五 10:00-18:30</p>
+          <a href="#">LINE@閒聊區(只有阿瑪在，小幫手不在)</a>
+          <p>客服信箱 ：fumeanstore@gmail.com</p>
+          <p>授權合作信箱 ：fumeanstudio@gmail.com</p>
+          <p>批發合作信箱 ：fumeancats@gmail.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      黃阿瑪的後宮生活© 2019 FUMEANCATS .All Rights Reserved.
+    </div>
+  </body>
+</html>
