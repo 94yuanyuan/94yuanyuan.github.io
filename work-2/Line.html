@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Reset.css" />
+    <title>Document</title>
+    <style>
+      /* body * {
+        border: 1px solid red;
+      } */
+      * {
+        font-family: arial, "Microsoft JhengHei", "微軟正黑體", sans-serif !important;
+      }
+      .kanBan {
+        width: 100%;
+        height: 100vh;
+        margin: auto;
+      }
+      .kanBan .ban {
+        width: 100%;
+        height: 100%;
+        background-image: url(mv01.jpg);
+        margin: 75px 0 0 0;
+        /* animation: a-b 5s infinite; */
+      }
+      /* @keyframes a-b {
+        0% {
+        }
+        50% {
+          background-image: url(mv01-1.jpg);
+        }
+        100% {
+          background: image url(mv01-2.jpg);
+        }
+      } */
+      .home {
+        display: flex;
+        width: 100%;
+        height: 75px;
+        background-color: rgb(256, 256, 256);
+        position: fixed;
+        top: 0px;
+      }
+
+      .home h1 {
+        margin: auto 40px;
+        font-size: 0px;
+      }
+      .home h1 a .image-wrapper img {
+        display: flex;
+      }
+
+      .home .headerMenuOnlyPC {
+        display: block;
+        height: 100%;
+        display: flex;
+        flex-grow: 14;
+      }
+      .headerMenuOnlyPC li a:visited {
+        color: #000;
+      }
+      .home .headerMenuOnlyPC li {
+        margin: auto 50px;
+      }
+      .home .headerMenuOnlyPC .A1 {
+        margin: auto 0 auto auto;
+      }
+      .home .headerMenuOnlyPC .A3 {
+        margin: auto auto auto 0;
+      }
+      .home .headerMenuOnlyPC li a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #000;
+      }
+
+      .home .headerMenuOnlyPC li::after {
+        display: flex;
+        content: "";
+        border-bottom: 4px solid rgb(256, 256, 256);
+        padding: 0 0 7px 0;
+      }
+      .home .headerMenuOnlyPC .A1::after {
+        border-bottom: 4px solid black;
+      }
+
+      .home ul {
+        display: block;
+        height: 100%;
+        display: flex;
+        flex-grow: 1;
+      }
+      .home ul .language {
+        margin: auto auto auto 2.5px;
+        font-size: 14px;
+      }
+      .home ul img {
+        margin: auto 2.5px auto auto;
+      }
+
+      .lifeOnLine {
+        text-align: center;
+      }
+      .lifeOnLine h3 {
+        padding: 30px;
+        font-size: 70px;
+      }
+      .lifeOnLine p {
+        font-size: 20px;
+        color: #616161;
+      }
+
+      .relativeBox {
+        height: 70px;
+        position: relative;
+      }
+      .spindle {
+        width: 830px;
+        height: 600px;
+        margin: auto;
+        display: flex;
+        padding: 250px 0 0 0;
+        /* flex-direction: row-reverse; */
+      }
+      .spindle:nth-child(2n-1) {
+        /**/
+        flex-direction: row-reverse;
+        height: 920px;
+      }
+      .spindle:nth-child(2n-1) img {
+        /**/
+        width: 880px;
+        height: 880px;
+      }
+      .spindle img {
+        width: 880px;
+        height: 560px;
+      }
+      .txtArea .desc {
+        line-height: 30px;
+        color: #777777;
+      }
+      .txtArea h5 span {
+        color: #07b53b;
+        white-space: nowrap;
+        position: absolute;
+      }
+      .txtArea h4 {
+        font-size: 40px;
+        width: 250px;
+        height: 70px;
+        white-space: nowrap;
+      }
+      .txtArea {
+        font-size: 18px;
+        line-height: 70px;
+      }
+
+      .box {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .box .item {
+        width: 360px;
+        height: 380px;
+        padding: 20px;
+        box-sizing: border-box;
+        margin: auto;
+        text-align: center;
+        font-size: 14px;
+        color: #616161;
+      }
+      .box .item img {
+        width: 100%;
+      }
+      .box .item h4 {
+        font-size: 24px;
+        color: #000;
+        padding: 25px 0 0 0;
+        margin: 15px;
+      }
+
+      .spindle.A1 .txtArea:nth-of-type(1)::before {
+        content: "";
+        width: 60px;
+        height: 60px;
+        background-image: url(LineToday.png);
+        border-radius: 5px;
+        background-size: contain;
+        display: block;
+      }
+      .spindle.A2 .txtArea:nth-of-type(1)::before {
+        content: "";
+        width: 60px;
+        height: 60px;
+        background-image: url(LINE貼文串.png);
+        border-radius: 5px;
+        background-size: contain;
+        display: block;
+      }
+      .spindle.A3 .txtArea:nth-of-type(1)::before {
+        content: "";
+        width: 60px;
+        height: 60px;
+        background-image: url(LINE\ Pay.png);
+        border-radius: 5px;
+        background-size: contain;
+        display: block;
+      }
+      .spindle.A4 .txtArea:nth-of-type(1)::before {
+        content: "";
+        width: 60px;
+        height: 60px;
+        background-image: url(LINE購物.png);
+        border-radius: 5px;
+        background-size: contain;
+        display: block;
+      }
+      .spindle.A5 .txtArea:nth-of-type(1)::before {
+        content: "";
+        width: 60px;
+        height: 60px;
+        background-image: url(LINE\ TV.png);
+        border-radius: 5px;
+        background-size: contain;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="home">
+      <h1>
+        Line
+        <a href="#">
+          <div class="image-wrapper">
+            <img src="icon-title-pc.png" alt="Logo" />
+          </div>
+        </a>
+      </h1>
+      <ul class="headerMenuOnlyPC">
+        <li class="A1">
+          <a href="#">Life on LINE</a>
+        </li>
+        <li class="A2">
+          <a href="#">通訊軟體</a>
+        </li>
+        <li class="A3">
+          <a href="#">服務總覽</a>
+        </li>
+      </ul>
+      <ul>
+        <img src="icon.png" alt="Icon" />
+        <li class="language">TW</li>
+      </ul>
+    </div>
+    <div class="kanBan">
+      <div class="ban"></div>
+    </div>
+
+    <div class="lifeOnLine">
+      <h3>Life on LINE</h3>
+      <p>
+        超越通訊軟體，LINE為用戶建構全新的溝通型態與豐富的數位生活，成為用戶生活中不可或缺的平台。
+      </p>
+    </div>
+
+    <div class="spindle A1">
+      <div class="txtArea">
+        <h4>LINE TODAY</h4>
+        <div class="relativeBox">
+          <h5><span>隨點隨看 生活快充</span></h5>
+        </div>
+        <div class="desc">
+          最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題永不斷線，LINE
+          TODAY陪伴您的每一天！
+        </div>
+      </div>
+      <img src="Day1.png" alt="" />
+    </div>
+
+    <div class="spindle A2">
+      <div class="txtArea">
+        <h4>LINE貼文串</h4>
+        <div class="relativeBox">
+          <h5><span>探索樂趣，分享生活</span></h5>
+        </div>
+        <div class="desc">
+          在貼文串追蹤你的最愛．有感內容不錯過。
+          打造你的個人閱知頻道，探索生活大小事。
+          分享所見所聞，串連人際、啟發創意的無限可能！
+        </div>
+      </div>
+      <img src="Day2.png" alt="" />
+    </div>
+
+    <div class="spindle A3">
+      <div class="txtArea">
+        <h4>LINE Pay</h4>
+        <div class="relativeBox">
+          <h5><span>付款、轉帳、生活繳費，輕鬆簡單又便利！</span></h5>
+        </div>
+        <div class="desc">
+          付款簡單又便利，還能輕鬆轉帳給LINE好友，動動手指輕鬆完成日常生活各種帳單繳費，
+          免出門省時又省力。
+        </div>
+      </div>
+      <img src="Day3.png" alt="" />
+    </div>
+
+    <div class="spindle A4">
+      <div class="txtArea">
+        <h4>LINE購物</h4>
+        <div class="relativeBox">
+          <h5><span>先LINE購物再購物</span></h5>
+        </div>
+        <div class="desc">
+          涵蓋各大購物、拍賣、精品、通路、旅遊、及票券商店，輕鬆貨比五百家，一站比價三千萬筆商品，再享LINE
+          POINTS回饋賺不停！
+        </div>
+      </div>
+      <img src="Day4.png" alt="" />
+    </div>
+
+    <div class="spindle A5">
+      <div class="txtArea">
+        <h4>LINE TV</h4>
+        <div class="relativeBox">
+          <h5><span>共享追劇生活</span></h5>
+        </div>
+        <div class="desc">
+          和朋友一起追劇，不錯過最新、最熱門、最潮的話題大劇，即時分享娛樂影音，展開精彩生活故事，LINE
+          TV是您的追劇第一選擇！
+        </div>
+      </div>
+      <img src="Day5.png" alt="" />
+    </div>
+
+    <div class="lifeOnLine">
+      <h3>通訊軟體</h3>
+      <p>
+        一款全新型態的通訊軟體，讓您隨時隨地享受免費傳訊、免費通話等溝通樂趣。
+      </p>
+    </div>
+
+    <div class="box">
+      <div class="item">
+        <img src="phone1.png" alt="" />
+        <h4>聊天、語音通話&視訊通話</h4>
+        能夠和好友一對一或多人群組訊息聊天，或是進行語音、視訊通話。
+      </div>
+      <div class="item">
+        <img src="phone2.png" alt="" />
+        <h4>貼圖＆表情貼＆主題</h4>
+        使用有趣的貼圖或表情貼豐富聊天，也能更換超讚的主題來表達自己。
+      </div>
+      <div class="item">
+        <img src="phone3.png" alt="" />
+        <h4>主頁</h4>
+        可以快速連結 LINE 的各種服務，包含貼圖等多樣的內容資訊。
+      </div>
+      <div class="item">
+        <img src="phone4.png" alt="" />
+        <h4>社群</h4>
+        輕鬆分享共同興趣、開心聊出好麻吉。
+      </div>
+      <div class="item">
+        <img src="phone5.png" alt="" />
+        <h4>貼文串</h4>
+        供你分享你的近況，或是瞭解好友的最新消息。透過「探索」功能，能找到更多你喜愛的內容。
+      </div>
+      <div class="item">
+        <img src="phone6.png" alt="" />
+        <h4>錢包</h4>
+        使用「 LINE
+        Pay」可以進行安全方便的行動付款或轉帳，也能使用其他金融相關服務。
+      </div>
+    </div>
+  </body>
+</html>
