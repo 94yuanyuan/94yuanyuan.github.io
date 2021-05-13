@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Reset.css" />
+    <style>
+      /* body * {
+      border: 1px solid seagreen;
+      } */
+      .title {
+        width: 100%;
+        height: 62px;
+        font-size: 40px;
+      }
+      .title::after {
+        display: flex;
+        content: "";
+        width: 36px;
+        border-bottom: 4px solid #000;
+        margin: 10px auto;
+      }
+      .advantages {
+        width: 960px;
+        /* background-color: aqua; */
+        margin: auto;
+        text-align: center;
+        font-size: 18px;
+      }
+      .advantages ul {
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+      .advantages li {
+        width: 184px;
+        border: 1px dotted #999999;
+        margin: 35px 5px;
+      }
+      .advantages li::after {
+        display: flex;
+        content: "";
+        width: 186px;
+        border-bottom: 3px solid #ae0014;
+        position: absolute;
+        margin-left: -1px;
+      }
+      .advantages a {
+        text-decoration: none;
+        display: block;
+        width: 184px;
+        height: 36px;
+        color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      a:hover {
+        background-color: #ae0014;
+      }
+      a:hover {
+        color: #fff;
+        transition: 0.5s;
+      }
+      a:hover::after {
+        content: "";
+        position: absolute;
+        bottom: -50%;
+        left: -50%;
+        height: 200%;
+        width: 200%;
+        background-color: #fff;
+        animation: animate 0.5s linear;
+        animation-fill-mode: forwards;
+      }
+      span {
+        position: relative;
+        z-index: 1;
+      }
+      @keyframes animate {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-100%);
+        }
+      }
+
+      .item1 {
+        height: 812px;
+        /* background-color: blue; */
+        position: relative;
+      }
+      .item1::after {
+        content: "因為我們做了這些革新  ─────────────────────────────────────";
+        background-color: #eee;
+        width: 682px;
+        height: 275px;
+        display: flex;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 50px;
+        justify-content: center;
+        line-height: 50px;
+        font-size: 17px;
+        color: #bb0404;
+      }
+      .car {
+        background-image: url(advantage-1-video-button-bg.png);
+        width: 695px;
+        height: 430px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        margin: auto auto 249px 20%;
+      }
+      .item1::before {
+        content: "";
+        background-color: #f4f4f4;
+        width: 439px;
+        height: 290px;
+        display: flex;
+        position: relative;
+        top: 40px;
+        left: 521px;
+      }
+      .car::after {
+        content: "操控樂趣";
+        font-size: 48px;
+        color: #fff;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 55px 16px;
+
+        background-color: #bc0808;
+        width: 323px;
+        height: 286px;
+        display: flex;
+        position: relative;
+        bottom: 133px;
+        right: 192px;
+      }
+      .title1 span {
+        color: #fff;
+        font-size: 125px;
+        display: flex;
+        line-height: 166px;
+        width: 125px;
+        height: 125px;
+        transform: rotate(90deg);
+        position: relative;
+        z-index: 2;
+        bottom: 285px;
+      }
+      .title1::after {
+        content: "透過最佳重量分配，實現平順起步、直線穩定加速，過彎同時保持車身平穩，帶給駕駛更靈敏的道路反饋，享受隨心馳騁的行駛快感。";
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+        padding: 20px;
+        line-height: 30px;
+        color: #fff;
+        display: flex;
+        width: 315px;
+        height: 223px;
+        background-color: black;
+        position: relative;
+        z-index: 3;
+        bottom: 282px;
+      }
+      .title2 {
+        display: block;
+        width: 254px;
+        height: 28px;
+        font-size: 28px;
+        color: #fff;
+        position: relative;
+        z-index: 99;
+        bottom: 510px;
+        left: 21px;
+      }
+
+      .b {
+        position: relative;
+        z-index: 2;
+        left: 83px;
+        bottom: 120px;
+        color: #999999;
+        text-align: left;
+      }
+      .b h3 {
+        font-size: 16px;
+        background-color: black;
+        display: inline-block;
+        border-radius: 3px;
+        padding: 5px;
+        position: relative;
+      }
+      .b p {
+        font-size: 14px;
+        color: #7b7b7b;
+        line-height: 23px;
+        width: 625px;
+      }
+      .b h3::after {
+        content: "▪";
+        display: flex;
+        color: #bd0d0d;
+        position: absolute;
+        left: 10px;
+        top: 27px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="advantages">
+      <div class="title">
+        <h2>五大優勢</h2>
+      </div>
+      <div class="bread">
+        <ul>
+          <li>
+            <a href="#"><span>操控樂趣</span></a>
+          </li>
+          <li>
+            <a href="#"><span>安全守護</span></a>
+          </li>
+          <li>
+            <a href="#"><span>乘坐舒適</span></a>
+          </li>
+          <li>
+            <a href="#"><span>以人為本</span></a>
+          </li>
+          <li>
+            <a href="#"><span>引以為傲</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="item1">
+        <div class="title1"><span>01</span></div>
+        <div class="title2"><span>人人滿意的駕駛體驗</span></div>
+        <div class="car"></div>
+        <div class="l"></div>
+        <div class="r"></div>
+        <div class="b">
+          <h3>低重心設計</h3>
+          <p>
+            &nbsp; &nbsp; &nbsp;
+            &nbsp;透過低重心設計，不僅呈現更低伏的外觀，更能減少車身側傾，保持高速行駛穩定性。
+          </p>
+          <h3>車體剛性強化</h3>
+          <p>
+            &nbsp; &nbsp; &nbsp;
+            &nbsp;車身結構採用超高強度鋼材，提高車輛穩定性，同時藉由雷射強化焊接技術，大幅增加焊點數量，提升車身抗扭剛性，強化駕駛穩定性及安全性。
+          </p>
+          <h3>四輪獨立懸吊</h3>
+          <p>
+            &nbsp; &nbsp; &nbsp;
+            &nbsp;搭載全新四輪獨立懸吊設定，透過懸吊的高乘載強度，保持輪胎抓地力，同時兼顧轉向靈敏度與清晰路感回饋，提升駕駛樂趣。
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
