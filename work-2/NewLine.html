@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Reset.css" />
+    <style>
+      body * {
+        outline: 1px solid red;
+      }
+      * {
+        font-family: SFPro, Arial, "Noto Sans JP", "Noto Sans KR", sans-serif !important;
+      }
+      .mvList {
+        background-image: url(mv01.jpg);
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+      }
+      .mvTxt {
+        font-size: 50px;
+        color: #fff;
+        position: absolute;
+        z-index: 1;
+        /* bottom: 78px; */
+        bottom: 178px;
+        left: 17px;
+      }
+      .mvTxt h3 {
+        font-size: 14px;
+      }
+      .zh-hant h1 {
+        display: none;
+      }
+      .zh-hant a {
+        position: absolute;
+        top: 35px;
+        left: 17px;
+        height: 14px;
+        padding: 10px;
+      }
+      .zh-hant .Pc {
+        display: none;
+      }
+
+      .mvDownload {
+        font-size: 14px;
+        border: 1px solid #fff;
+        width: 100px;
+        height: 30px;
+        margin: 20px auto 20px 0;
+        text-align: center;
+        line-height: 30px; /*跟text-align一起用,跟容器大小一樣就垂直置中*/
+        border-radius: 5px;
+      }
+      .mvDownload a {
+        text-decoration: none;
+        display: block;
+        color: #fff;
+      }
+
+      .headerMenu.onlyPc {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 0 0 100px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .headerMenu.onlyPc a {
+        white-space: nowrap;
+        display: block;
+        width: 80px;
+        height: 20px;
+        text-decoration: none;
+        color: #000;
+        font-size: 15px;
+        margin: 10px;
+      }
+      .headerMenu.onlyPc .current ~ li a {
+        color: rgba(30, 30, 30, 0.5);
+        font-weight: 700;
+      }
+      .headerMenu.onlyPc .current::after {
+        display: flex;
+        content: "";
+        border-bottom: 4px solid black;
+        width: calc(100% - 20px);
+        margin: auto;
+      }
+
+      .box {
+        position: absolute;
+        top: 35px;
+        right: 17px;
+        display: block;
+        display: flex;
+        font-size: 18px;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+      }
+
+      .minArea {
+        width: 100%;
+      }
+      .subTxt h3 {
+        font-size: 70px;
+        color: #000;
+        text-align: center;
+        padding: 50px 0 20px 0;
+        display: none;
+      }
+      .subTxt p {
+        font-size: 14px;
+        color: #616161;
+        text-align: center;
+        line-height: 30px;
+        padding: 25px 0 130px 0;
+        width: 100%;
+        margin: auto;
+      }
+
+      .serviceCnt {
+        margin: auto;
+        width: 90%;
+      }
+      .serviceCnt img {
+        width: 100%;
+      }
+      .serviceCnt .l {
+        border-left: 1px dotted #777777;
+        padding: 30px 0;
+        margin-left: 18px;
+      }
+      .serviceCnt .l h2,
+      .serviceCnt .l h3,
+      .serviceCnt .l p,
+      .siteLink {
+        padding: 0 0 0 30px;
+      }
+      .serviceCnt .l h2,
+      .serviceCnt .l h3 {
+        font-weight: 700;
+        line-height: 35px;
+      }
+      .serviceCnt .l h3,
+      .serviceCnt .l p {
+        font-size: 14px;
+      }
+      .serviceCnt .l h2 {
+        font-size: 22px;
+      }
+      .serviceCnt .l h3 {
+        color: #07b53b;
+      }
+      .serviceCnt .l p {
+        color: #777777;
+        line-height: 25px;
+      }
+
+      .siteLink a {
+        display: flex;
+        width: 128.2px;
+        height: 46px;
+        font-size: 14px;
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        margin: 30px 0;
+      }
+
+      .communication {
+        width: 100%;
+        padding: 80px 0;
+        background-color: #f6f7f8;
+        text-align: center;
+        line-height: 1.5;
+      }
+      .communication img {
+        width: 100%;
+      }
+      .communication .fontB {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 26px;
+      }
+      .communication .subTxt {
+        font-size: 14px;
+        color: #616161;
+        padding: 15px;
+      }
+      .contentList h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 16px 0 12px;
+      }
+      .contentList p {
+        color: #616161;
+        line-height: 1.6;
+        font-size: 14px;
+        padding: 15px;
+      }
+
+      .hand {
+        background-image: url(minHand.png);
+        background-position: center;
+        width: 90%;
+        margin: 80px auto;
+        height: 133px;
+        color: #fff;
+        line-height: 133px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .allProduct {
+        width: 100%;
+      }
+      .productMenuWrap .productCategory.fontB {
+        font-size: 13px;
+        border: 1px solid rgba(34, 34, 34, 0.15);
+        border-radius: 50px;
+        padding: 8px 15px;
+        color: rgba(30, 30, 30, 0.7);
+        background-color: transparent;
+        margin: 0 2.5px;
+      }
+      .productMenuWrap .selected.productCategory.fontB {
+        color: #fff;
+        background-color: #07b53b;
+        border: 1px solid #07b53b;
+      }
+      .productCnt {
+        width: 90%;
+        margin: auto;
+      }
+      .productMenuWrap {
+        align-items: center;
+        display: flex;
+        box-sizing: border-box;
+        white-space: nowrap;
+        overflow: auto;
+      }
+
+      .onlySp {
+        padding: 50px 0;
+        text-align: left;
+        margin-left: 82px;
+        position: relative;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .productList .onlySp:nth-child(1)::before {
+        background-image: url(serveIcon-1.png);
+      }
+      .productList .onlySp:nth-child(2)::before {
+        background-image: url(serveIcon-2.png);
+      }
+      .productList .onlySp:nth-child(3)::before {
+        background-image: url(serveIcon-3.png);
+      }
+      .productList .onlySp:nth-child(4)::before {
+        background-image: url(serveIcon-4.png);
+      }
+      .productList .onlySp:nth-child(5)::before {
+        background-image: url(serveIcon-5.png);
+      }
+      .productList .onlySp:nth-child(6)::before {
+        background-image: url(serveIcon-6.png);
+      }
+      .productList .onlySp:nth-child(7)::before {
+        background-image: url(serveIcon-7.png);
+      }
+      .productList .onlySp:nth-child(8)::before {
+        background-image: url(serveIcon-8.png);
+      }
+      .productList .onlySp:nth-child(9)::before {
+        background-image: url(serveIcon-9.png);
+      }
+      .productList .onlySp:nth-child(10)::before {
+        background-image: url(serveIcon-10.png);
+      }
+      .productList .onlySp:nth-child(11)::before {
+        background-image: url(serveIcon-11.png);
+      }
+      .onlySp::before {
+        content: "";
+        width: 70px;
+        height: 70px;
+        display: flex;
+        position: absolute;
+        left: -79.5px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        border-radius: 15px;
+      }
+
+      .productTxtArea {
+        padding: 0 5px;
+      }
+      .productTxtArea h3 {
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .productTxtArea p {
+        font-size: 13px;
+        color: #616161;
+      }
+
+      @media screen and (max-width: 319px) {
+        .headerMenu.onlyPc a {
+          margin: 5px;
+        }
+      }
+      @media screen and (max-width: 671px) {
+        .subTxt p {
+          width: 90%;
+        }
+      }
+      @media screen and (min-width: 879px) {
+        .zh-hant .Sp {
+          display: none;
+        }
+        .box .Sp,
+        .box p {
+          display: none;
+        }
+        .headerMenu.onlyPc {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 60px;
+          background-color: rgba(256, 256, 256, 0.95);
+          border-bottom: 1px solid rgba(30, 30, 30, 0.3);
+        }
+        .headerMenu.onlyPc li {
+          margin: 0 20px;
+        }
+        .headerMenu.onlyPc a {
+          height: 14.4px;
+        }
+        .headerMenu.onlyPc .current ~ li a {
+          color: #000;
+        }
+        .subTxt h3 {
+          display: block;
+          font-size: 70px;
+        }
+        .subTxt p {
+          display: block;
+          font-size: 20px;
+          width: 100%;
+        }
+
+        .serviceCnt {
+          display: flex;
+          border-top: 0px solid rgba(0, 0, 0, 0.15);
+        }
+        .serviceCnt .l {
+          border-left: none;
+          margin-left: 0;
+        }
+        .serviceCnt .l,
+        .serviceCnt .r {
+          width: 50%;
+          padding: 100px 0;
+        }
+        .serviceCnt .l h2,
+        .serviceCnt .l h3,
+        .serviceCnt .l p,
+        .siteLink {
+          padding: 10px;
+        }
+        .serviceCnt .l h2 {
+          font-size: 40px;
+        }
+        .serviceCnt .l h3,
+        .serviceCnt .l p {
+          font-size: 18px;
+        }
+
+        .serviceCnt:nth-child(odd) {
+          flex-direction: row-reverse;
+        }
+        .serviceCnt:nth-child(odd) .r {
+          border-left: 1px dotted #777777;
+        }
+        .serviceCnt:nth-child(even) .r {
+          border-right: 1px dotted #777777;
+        }
+        .serviceCnt:before {
+          content: "";
+          position: absolute;
+          display: inline-block;
+          margin-top: -1px;
+          width: 10px;
+          height: 10px;
+          border: 1px solid rgba(30, 30, 30, 0.3);
+          border-radius: 50%;
+          left: calc(50% - 6px);
+          background-color: #fff;
+        }
+
+        .communication .fontB {
+          font-size: 60px;
+          line-height: 1.27;
+          margin-bottom: 0;
+        }
+        .communication .subTxt {
+          font-size: 20px;
+        }
+        .item {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .contentList {
+          width: 33.333333%;
+        }
+        .contentList h3 {
+          font-size: 24px;
+        }
+
+        .hand {
+          margin: 180px 0;
+          width: 100%;
+          background-image: url(hand.png);
+          background-size: cover;
+          height: 320px;
+          line-height: 320px;
+          font-size: 46px;
+        }
+
+        .productList {
+          display: flex;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+          flex-direction: row-reverse;
+          position: relative;
+          top: -537px;
+        }
+        .onlySp::before {
+          position: absolute;
+          top: -270px;
+          left: 17.5px;
+          border-radius: 15px;
+        }
+        .onlySp {
+          border-bottom: none;
+          margin-left: 0;
+          width: 25%;
+          height: 340px;
+          display: flex;
+          padding: 30px 17.5px;
+        }
+        .productTxtArea h3,
+        .productTxtArea p {
+          margin-left: -5px;
+        }
+        .productTxtArea h3 {
+          font-size: 22px;
+          margin-top: 85px;
+        }
+        .productTxtArea p {
+          font-size: 14px;
+        }
+
+        .productMenuWrap {
+          flex-direction: column;
+          align-items: flex-start;
+          position: sticky;
+          top: 100px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+        .productMenuWrap .productCategory.fontB {
+          padding: 8px 15px;
+          margin: 8px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mvList">
+      <div class="zh-hant">
+        <h1>Line</h1>
+        <a class="Sp" href="#">
+          <img src="icon-title-sp-fff.png" alt="Logo" />
+        </a>
+      </div>
+      <a class="box" href="#">
+        <img class="Sp" src="icon-fff.png" alt="Icon" />
+        <p>TW▾</p>
+      </a>
+      <div class="mvTxt">
+        <h2 class="fontL">Life on LINE</h2>
+        <h3>LINE始終陪伴在你身旁。</h3>
+        <div class="mvDownload"><a href="#">下載</a></div>
+      </div>
+    </div>
+    <div class="minArea">
+      <div class="subTxt">
+        <h3>Life on LINE</h3>
+        <p>
+          超越通訊軟體，LINE為用戶建構全新的溝通型態與豐富的數位生活，成為用戶生活中不可或缺的平台。
+        </p>
+      </div>
+      <ul class="headerMenu onlyPc">
+        <li class="current">
+          <a href="#">Life on LINE</a>
+        </li>
+        <li>
+          <a href="#">通訊軟體</a>
+        </li>
+        <li>
+          <a href="#">服務總覽</a>
+        </li>
+      </ul>
+    </div>
+    <div class="serviceCnt">
+      <div class="r">
+        <img src="Day1sp.png" alt="" />
+      </div>
+      <div class="l">
+        <h2>LINE TODAY</h2>
+        <h3>隨點隨看 生活快充</h3>
+        <p>
+          最即時的新聞、影音、運動賽事和娛樂內容直播，讓你話題永不斷線，LINE
+          TODAY陪伴您的每一天！
+        </p>
+        <div class="siteLink">
+          <a href="#">其他詳細資訊</a>
+        </div>
+      </div>
+    </div>
+    <div class="serviceCnt">
+      <div class="r">
+        <img src="Day2sp.png" alt="" />
+      </div>
+      <div class="l">
+        <h2>LINE貼文串</h2>
+        <h3>探索樂趣，分享生活</h3>
+        <p>
+          在貼文串追蹤你的最愛．有感內容不錯過。
+          打造你的個人閱知頻道，探索生活大小事。
+          分享所見所聞，串連人際、啟發創意的無限可能！
+        </p>
+        <div class="siteLink">
+          <a href="#">其他詳細資訊</a>
+        </div>
+      </div>
+    </div>
+    <div class="serviceCnt">
+      <div class="r">
+        <img src="Day3sp.png" alt="" />
+      </div>
+      <div class="l">
+        <h2>LINE Pay</h2>
+        <h3>付款、轉帳、生活繳費，輕鬆簡單又便利！</h3>
+        <p>
+          付款簡單又便利，還能輕鬆轉帳給LINE好友，動動手指輕鬆完成日常生活各種帳單繳費，
+          免出門省時又省力。
+        </p>
+        <div class="siteLink">
+          <a href="#">其他詳細資訊</a>
+        </div>
+      </div>
+    </div>
+    <div class="serviceCnt">
+      <div class="r">
+        <img src="Day4sp.png" alt="" />
+      </div>
+      <div class="l">
+        <h2>LINE購物</h2>
+        <h3>先LINE購物再購物</h3>
+        <p>
+          涵蓋各大購物、拍賣、精品、通路、旅遊、及票券商店，輕鬆貨比五百家，一站比價三千萬筆商品，再享LINE
+          POINTS回饋賺不停！
+        </p>
+        <div class="siteLink">
+          <a href="#">其他詳細資訊</a>
+        </div>
+      </div>
+    </div>
+    <div class="serviceCnt">
+      <div class="r">
+        <img src="Day5sp.png" alt="" />
+      </div>
+      <div class="l">
+        <h2>LINE TV</h2>
+        <h3>共享追劇生活</h3>
+        <p>
+          和朋友一起追劇，不錯過最新、最熱門、最潮的話題大劇，即時分享娛樂影音，展開精彩生活故事，LINE
+          TV是您的追劇第一選擇！
+        </p>
+        <div class="siteLink">
+          <a href="#">其他詳細資訊</a>
+        </div>
+      </div>
+    </div>
+    <div class="communication">
+      <h2 class="fontB">通訊軟體</h2>
+      <p class="subTxt">
+        一款全新型態的通訊軟體，讓您隨時隨地享受免費傳訊、免費通話等溝通樂趣。
+      </p>
+      <div class="item">
+        <div class="contentList">
+          <img src="phone1.png" alt="" />
+          <h3>聊天、語音通話&視訊通話</h3>
+          <p>能夠和好友一對一或多人群組訊息聊天，或是進行語音、視訊通話。</p>
+        </div>
+        <div class="contentList">
+          <img src="phone2.png" alt="" />
+          <h3>貼圖＆表情貼＆主題</h3>
+          <p>使用有趣的貼圖或表情貼豐富聊天，也能更換超讚的主題來表達自己。</p>
+        </div>
+        <div class="contentList">
+          <img src="phone3.png" alt="" />
+          <h3>主頁</h3>
+          <p>可以快速連結 LINE 的各種服務，包含貼圖等多樣的內容資訊。</p>
+        </div>
+        <div class="contentList">
+          <img src="phone4.png" alt="" />
+          <h3>社群</h3>
+          <p>輕鬆分享共同興趣、開心聊出好麻吉。</p>
+        </div>
+        <div class="contentList">
+          <img src="phone5.png" alt="" />
+          <h3>貼文串</h3>
+          <p>
+            供你分享你的近況，或是瞭解好友的最新消息。透過「探索」功能，能找到更多你喜愛的內容。
+          </p>
+        </div>
+        <div class="contentList">
+          <img src="phone6.png" alt="" />
+          <h3>錢包</h3>
+          <p>
+            使用「 LINE Pay
+            」可以進行安全方便的行動付款或轉帳，也能使用其他金融相關服務。
+          </p>
+        </div>
+        <div class="hand">企業服務</div>
+      </div>
+      <div class="allProduct">
+        <h2 class="fontB">服務總覽</h2>
+        <div class="productCnt">
+          <ul class="productMenuWrap">
+            <li>
+              <button type="button" class="selected productCategory fontB">
+                All Product
+              </button>
+            </li>
+            <li>
+              <button type="button" class="productCategory fontB">通訊</button>
+            </li>
+            <li>
+              <button type="button" class="productCategory fontB">娛樂</button>
+            </li>
+            <li>
+              <button type="button" class="productCategory fontB">生活</button>
+            </li>
+            <li>
+              <button type="button" class="productCategory fontB">購物</button>
+            </li>
+            <li>
+              <button type="button" class="productCategory fontB">工具</button>
+            </li>
+            <li>
+              <button type="button" class="productCategory fontB">金融</button>
+            </li>
+            <li>
+              <button type="button" class="productCategory fontB">
+                企業商務
+              </button>
+            </li>
+            <li>
+              <button type="button" class="productCategory fontB">
+                新聞資訊
+              </button>
+            </li>
+            <li>
+              <button type="button" class="productCategory fontB">相機</button>
+            </li>
+            <li>
+              <button type="button" class="productCategory fontB">Games</button>
+            </li>
+          </ul>
+          <ul class="productList">
+            <div class="onlySp">
+              <div class="productTxtArea">
+                <h3>LINE Messenger</h3>
+                <p>拉近人與人、人與資訊及應用服務間的距離的通訊軟體</p>
+              </div>
+            </div>
+            <div class="onlySp">
+              <div class="productTxtArea">
+                <h3>LINE STORE</h3>
+                <p>可購買 LINE 貼圖、主題或遊戲中貨幣的官方線上商店</p>
+              </div>
+            </div>
+            <div class="onlySp">
+              <div class="productTxtArea">
+                <h3>LINE貼文串</h3>
+                <p>探索樂趣，分享生活</p>
+              </div>
+            </div>
+            <div class="onlySp">
+              <div class="productTxtArea">
+                <h3>LINE Antivirus</h3>
+                <p>
+                  在「LINE Antivirus」執行幾個簡單的步驟，
+                  就能保護智慧手機上個人資訊的安全，
+                  並可免於病毒或惡意程式的侵害。(限Android版本)
+                </p>
+              </div>
+            </div>
+            <div class="onlySp">
+              <div class="productTxtArea">
+                <h3>LINE社群</h3>
+                <p>輕鬆分享共同興趣、開心聊出好麻吉。</p>
+              </div>
+            </div>
+            <div class="onlySp">
+              <div class="productTxtArea">
+                <h3>LINE TV</h3>
+                <p>共享追劇生活</p>
+              </div>
+            </div>
+            <div class="onlySp">
+              <div class="productTxtArea">
+                <h3>LINE GAME</h3>
+                <p>PLAYTIME ANYTIME！ 隨時隨地和朋友一起玩！</p>
+              </div>
+            </div>
+            <div class="onlySp">
+              <div class="productTxtArea">
+                <h3>LINE POD</h3>
+                <p>全新 PC 遊戲平台，用 LINE 帳號暢玩各種線上遊戲！</p>
+              </div>
+            </div>
+            <div class="onlySp">
+              <div class="productTxtArea">
+                <h3>LINE MUSIC</h3>
+                <p>全方位音樂服務，不只聽音樂、換鈴聲，還能練唱！</p>
+              </div>
+            </div>
+            <div class="onlySp">
+              <div class="productTxtArea">
+                <h3>LINE WEBTOON 每日漫畫</h3>
+                <p>
+                  台灣最大漫畫平台，風靡全世界的熱門漫畫每日更新中，追了才酷，一看就停不下來！
+                </p>
+              </div>
+            </div>
+            <div class="onlySp">
+              <div class="productTxtArea">
+                <h3>LINE旅遊</h3>
+                <p>排行程、找景點、機票住宿比價，一站俱全！</p>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

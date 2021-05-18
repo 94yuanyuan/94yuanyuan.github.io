@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="Reset.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <style>
       /* body * {
       border: 1px solid seagreen;
@@ -123,6 +128,10 @@
         z-index: 1;
         margin: auto auto 249px 20%;
       }
+      .item1:nth-of-type(even) .car {
+        background-image: url(advantage-2-video-button-bg.png);
+        margin: auto 20% 249px auto;
+      }
       .item1::before {
         content: "";
         background-color: #f4f4f4;
@@ -160,9 +169,26 @@
         position: relative;
         z-index: 2;
         bottom: 285px;
+        font-family: "Roboto Condensed";
       }
       .title1::after {
         content: "透過最佳重量分配，實現平順起步、直線穩定加速，過彎同時保持車身平穩，帶給駕駛更靈敏的道路反饋，享受隨心馳騁的行駛快感。";
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+        padding: 20px;
+        line-height: 30px;
+        color: #fff;
+        display: flex;
+        width: 315px;
+        height: 223px;
+        background-color: black;
+        position: relative;
+        z-index: 3;
+        bottom: 282px;
+      }
+      .item1:nth-of-type(even) .title1::after {
+        content: "您的愛車會妥善保護您，強悍穩固的車身可使您安全無虞。世界級的安全功能讓您輕鬆自如享受旅程、毫無後顧之憂。";
         justify-content: center;
         align-items: center;
         text-align: justify;
@@ -187,6 +213,7 @@
         z-index: 99;
         bottom: 510px;
         left: 21px;
+        white-space: nowrap;
       }
 
       .b {
@@ -229,25 +256,59 @@
       <div class="bread">
         <ul>
           <li>
-            <a href="#"><span><h2>操控樂趣</h2></span></a>
+            <a href="#"
+              ><span><h2>操控樂趣</h2></span></a
+            >
           </li>
           <li>
-            <a href="#"><span><h2>安全守護</h2></span></a>
+            <a href="#"
+              ><span><h2>安全守護</h2></span></a
+            >
           </li>
           <li>
-            <a href="#"><span><h2>乘坐舒適</h2></span></a>
+            <a href="#"
+              ><span><h2>乘坐舒適</h2></span></a
+            >
           </li>
           <li>
-            <a href="#"><span><h2>以人為本</h2></span></a>
+            <a href="#"
+              ><span><h2>以人為本</h2></span></a
+            >
           </li>
           <li>
-            <a href="#"><span><h2>引以為傲</h2></span></a>
+            <a href="#"
+              ><span><h2>引以為傲</h2></span></a
+            >
           </li>
         </ul>
       </div>
       <div class="item1">
         <div class="title1"><span>01</span></div>
         <div class="title2"><span>人人滿意的駕駛體驗</span></div>
+        <div class="car"></div>
+        <div class="l"></div>
+        <div class="r"></div>
+        <div class="b">
+          <h3>低重心設計</h3>
+          <p>
+            &nbsp; &nbsp; &nbsp;
+            &nbsp;透過低重心設計，不僅呈現更低伏的外觀，更能減少車身側傾，保持高速行駛穩定性。
+          </p>
+          <h3>車體剛性強化</h3>
+          <p>
+            &nbsp; &nbsp; &nbsp;
+            &nbsp;車身結構採用超高強度鋼材，提高車輛穩定性，同時藉由雷射強化焊接技術，大幅增加焊點數量，提升車身抗扭剛性，強化駕駛穩定性及安全性。
+          </p>
+          <h3>四輪獨立懸吊</h3>
+          <p>
+            &nbsp; &nbsp; &nbsp;
+            &nbsp;搭載全新四輪獨立懸吊設定，透過懸吊的高乘載強度，保持輪胎抓地力，同時兼顧轉向靈敏度與清晰路感回饋，提升駕駛樂趣。
+          </p>
+        </div>
+      </div>
+      <div class="item1">
+        <div class="title1"><span>02</span></div>
+        <div class="title2"><span>行車更安心的高剛性車體</span></div>
         <div class="car"></div>
         <div class="l"></div>
         <div class="r"></div>
