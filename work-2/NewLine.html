@@ -7,11 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="Reset.css" />
     <style>
-      /* body * {
+      body * {
         outline: 1px solid red;
-      } */
+      }
       * {
         font-family: SFPro, Arial, "Noto Sans JP", "Noto Sans KR", sans-serif !important;
+      }
+      * a {
+        text-decoration: none;
       }
       .mvList {
         background-image: url(mv01.jpg);
@@ -35,7 +38,7 @@
       .zh-hant h1 {
         display: none;
       }
-      .zh-hant a {
+      .zh-hant .Sp {
         position: absolute;
         top: 35px;
         left: 17px;
@@ -177,7 +180,7 @@
 
       .communication {
         width: 100%;
-        padding: 80px 0;
+        padding: 80px 0 0 0;
         background-color: #f6f7f8;
         text-align: center;
         line-height: 1.5;
@@ -248,7 +251,7 @@
         overflow: auto;
       }
 
-      .onlySp {
+      .productList .onlySp {
         padding: 50px 0;
         text-align: left;
         margin-left: 82px;
@@ -313,6 +316,65 @@
         color: #616161;
       }
 
+      .zh-hant {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #fff;
+      }
+      .zh-hant .copyright,
+      .zh-hant .footerLinks,
+      .zh-hant .snsLinks {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .zh-hant .copyright,
+      .zh-hant .snsLinks,
+      .zh-hant.lineAccount {
+        padding: 0 5%;
+      }
+      .zh-hant .copyright {
+        margin: 31px 0 26px;
+        justify-content: space-between;
+      }
+      .zh-hant .copyright a {
+        font-size: 13px;
+        color: #000;
+      }
+      .zh-hant .copyright a.familySiteTxt {
+        font-weight: 700;
+      }
+      .zh-hant .footerLinks {
+        padding: 0 calc(5% - 15px);
+      }
+      .zh-hant .footerLinks a {
+        color: #000;
+        font-size: 12px;
+        font-weight: 700;
+        margin: 0 0 0 15px;
+      }
+      .zh-hant .footerLinks li:nth-child(1) ::after,
+      .zh-hant .footerLinks li:nth-child(2) ::after,
+      .zh-hant .footerLinks li:nth-child(3) ::after {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 12px;
+        background-color: rgba(0, 0, 0, 0.2);
+        margin: 0 0 3px 14px;
+        vertical-align: bottom;
+      }
+      .snsLinks li {
+        margin: 15px 15px 20px 0;
+      }
+      .zh-hant.lineAccount .onlySp {
+        font-size: 12px;
+        color: #777;
+        border-radius: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 8px 12px;
+        margin: 0 0 72px 0;
+      }
       @media screen and (max-width: 319px) {
         .headerMenu.onlyPc a {
           margin: 5px;
@@ -338,6 +400,7 @@
           right: 0;
           bottom: 0;
           height: 60px;
+          z-index: 1;
           background-color: rgba(256, 256, 256, 0.95);
           border-bottom: 1px solid rgba(30, 30, 30, 0.3);
         }
@@ -438,31 +501,39 @@
           font-size: 46px;
         }
 
+        .productCnt {
+          display: flex;
+          width: 100%;
+        }
         .productList {
           display: flex;
           flex-wrap: wrap;
           box-sizing: border-box;
           flex-direction: row-reverse;
-          position: relative;
-          top: -537px;
+          width: calc(100% - 101.34px);
         }
         .onlySp::before {
           position: absolute;
-          top: -270px;
-          left: 17.5px;
+          top: -220px;
+          left: 30px;
           border-radius: 15px;
         }
-        .onlySp {
+        .productList .onlySp {
           border-bottom: none;
           margin-left: 0;
-          width: 25%;
-          height: 340px;
-          display: flex;
-          padding: 30px 17.5px;
+          width: 20%;
+          height: 290px;
+          padding: 30px 30px;
+          border-radius: 4px;
+          margin: 20px;
+          background-color: #fff;
+          box-shadow: 0 7px 7px 7px rgba(0, 0, 0, 0.05);
         }
-        .productTxtArea h3,
-        .productTxtArea p {
-          margin-left: -5px;
+        .productList .onlySp:nth-child(3n) {
+          margin: 20px 20px 20px 0;
+        }
+        .productTxtArea {
+          padding: 0;
         }
         .productTxtArea h3 {
           font-size: 22px;
@@ -475,11 +546,15 @@
         .productMenuWrap {
           flex-direction: column;
           align-items: flex-start;
+          height: 100%;
           position: sticky;
-          top: 100px;
+          top: 53px;
           left: 0;
           right: 0;
           bottom: 0;
+          width: 114px;
+          margin-left: 20px;
+          margin-top: 8.5px;
         }
         .productMenuWrap .productCategory.fontB {
           padding: 8px 15px;
@@ -768,6 +843,29 @@
             </div>
           </ul>
         </div>
+        <footer class="zh-hant">
+          <div class="copyright">
+            <a href="#">© LINE Corporation</a>
+            <a class="familySiteTxt" href="#">Family sites</a>
+          </div>
+          <ul class="footerLinks">
+            <li><a class="fontM" href="#">常見問題</a></li>
+            <li><a class="fontM" href="#">服務條款</a></li>
+            <li><a class="fontM" href="#">隱私權政策</a></li>
+            <li><a class="fontM" href="#">註冊及移動帳號</a></li>
+          </ul>
+          <ul class="snsLinks">
+            <li>
+              <a href="#"><img src="icon-sns-y.png" alt="" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="icon-sns-f.png" alt="" /></a>
+            </li>
+          </ul>
+          <div class="zh-hant lineAccount">
+            <a class="onlySp" href="#">LINE 加入好友</a>
+          </div>
+        </footer>
       </div>
     </div>
   </body>

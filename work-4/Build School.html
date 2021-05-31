@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="Reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <title>Hello, world!</title>
+  </head>
+  <style>
+    body * {
+      /* outline: 1px solid rebeccapurple; */
+      font-family: lulo-clean-w01-one-bold, sans-serif;
+    }
+    body * {
+      text-decoration: none;
+    }
+    .box {
+      position: relative;
+    }
+    .navbar-brand {
+      font-size: 30px;
+      display: flex;
+      line-height: 59px;
+      margin: 0;
+    }
+    .supTxt {
+      font-size: 12px;
+      width: 130px;
+      margin-left: -4px;
+      position: absolute;
+      bottom: 0;
+      left: 104.6px;
+      color: #000;
+    }
+    .nav-item a {
+      font-size: 13px;
+    }
+    .navbar-brand::before {
+      content: "";
+      width: 54px;
+      height: 59px;
+      background-image: url(Logo.png);
+      background-size: cover;
+      margin: 0 10px 0 0;
+    }
+    .col-12.col-md-6 {
+      margin: 50px 0;
+    }
+
+    .col-12.col-md-6 .item-1-h2,
+    .col-12.col-md-6 .item-1-h3 {
+      line-height: 2em;
+      font-weight: 700;
+    }
+    .col-12.col-md-6 .item-1-h2 {
+      font-size: 30px;
+      color: #3d3d3d;
+      text-align: center;
+    }
+    .col-12.col-md-6 .item-1-h3 {
+      font-size: 26px;
+      text-align: center;
+    }
+    .col-12.col-md-6 h4 {
+      font-size: 18px;
+      line-height: 1.5em;
+    }
+    .col-12.col-md-6 .item-1-p {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 0;
+      text-align: center;
+    }
+    .col-12.col-md-6 p {
+      font-size: 17px;
+      line-height: 1.2em;
+      margin: 20px 0;
+    }
+    .a {
+      width: 76px;
+      height: 49px;
+      border: 6px solid;
+      margin: auto;
+      box-shadow: 0 3px 3px 3px rgb(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .b {
+      width: 0;
+      height: 0;
+      border-top: 12px solid;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      position: absolute;
+      bottom: -16px;
+    }
+    .c {
+      border-bottom: 6px solid;
+      width: 40px;
+      color: #f50038;
+      transform: rotate(138deg);
+      position: relative;
+      bottom: 40px;
+      left: 0;
+      right: 0;
+      top: -27px;
+      margin: auto;
+    }
+    .col-12.col-md-6 img {
+      width: 107px;
+      height: 109px;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      margin: 0 auto 5px auto;
+    }
+
+    .city h2 {
+      font-size: 0;
+    }
+    .city::before {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 2em;
+      height: 63px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      background-color: rgba(4, 81, 132, 0.9);
+      margin: 110px 0 0 0;
+    }
+    .city:nth-child(1).city::before {
+      content: "18 - 24週的實作及作品開發 - 從訓練、就業、到企業連結";
+    }
+    .city:nth-child(3).city::before {
+      content: "在課程及作品實作中，將採用這些工具 - 熟悉實務上軟體開發團隊的運作、分工及真實專案的流程";
+    }
+    .city:nth-child(5).city::before {
+      content: "我們的講師及企業導師擁有在這些公司的工作經歷、擔任主管或資深工程師";
+    }
+    .city {
+      background-image: url(ct.png);
+      background-size: cover;
+    }
+
+    .message-1 img {
+      display: flex;
+      margin: auto;
+    }
+    .message-1 div {
+      height: 110px;
+      margin: 50px 0 25px 0;
+    }
+    .message-1 .A {
+      margin: 40px 0 35px 0;
+    }
+    .m {
+      width: 94px;
+      height: 76px;
+    }
+    .m2 {
+      width: 42px;
+      height: 84px;
+    }
+    .m3 {
+      width: 75px;
+      height: 90px;
+    }
+    .m4 {
+      width: 110px;
+      height: 110px;
+    }
+    .message-1 p,
+    .message-1 h3 {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .message-1 p {
+      margin: 50px 0 0 0;
+    }
+    .message-1 h3 {
+      color: #f50038;
+      margin: 0 0 25px 0;
+    }
+    .message-1 ul {
+      font-size: 16px;
+      line-height: 1.4em;
+      margin-left: 15%;
+    }
+    .message-1 li {
+      list-style: disc;
+    }
+
+    .message-2 img {
+      display: flex;
+      margin: 0 auto 25px;
+    }
+    .message-2 div {
+      height: 182px;
+      margin: 50px 0 25px 0;
+    }
+    .towM {
+      width: 140px;
+      height: 58px;
+    }
+    .towM2 {
+      width: 120px;
+      height: 99px;
+    }
+    .towM3 {
+      width: 141px;
+      height: 73px;
+    }
+    .towM4 {
+      width: 140px;
+      height: 44px;
+    }
+    .towM5 {
+      width: 176px;
+      height: 51px;
+    }
+    .towM6 {
+      width: 55px;
+      height: 73px;
+    }
+    .towM7 {
+      width: 210px;
+      height: 51px;
+    }
+    .towM8 {
+      width: 160px;
+      height: 73px;
+    }
+    .message-2 h3 {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 25px 0;
+    }
+    .message-2 ul {
+      font-size: 16px;
+      line-height: 1.4em;
+      margin-left: 15%;
+    }
+    .message-2 li {
+      list-style: disc;
+    }
+
+    .message-3 {
+      margin: 50px 0 25px;
+    }
+    .message-3 img {
+      display: flex;
+    }
+    .row :nth-child(1) .message-3 img {
+      margin: 0 auto 25px;
+    }
+    .row :nth-child(2) .message-3 img {
+      margin: 0 auto 10px;
+    }
+    .row :nth-child(3) .message-3 img {
+      margin: 0 auto 15px;
+    }
+    .row :nth-child(4) .message-3 img {
+      margin: 0 auto 20px;
+    }
+    .message-3 .message-3 div {
+      margin: 50px 0 25px 0;
+    }
+    .threeM {
+      width: 184px;
+      height: 53px;
+    }
+    .threeM2 {
+      width: 159px;
+      height: 53px;
+    }
+    .threeM3 {
+      width: 187px;
+      height: 64px;
+    }
+    .threeM4 {
+      width: 180px;
+      height: 61px;
+    }
+    .threeM5 {
+      width: 159px;
+      height: 50px;
+    }
+    .threeM6 {
+      width: 105px;
+      height: 70px;
+    }
+    .threeM7 {
+      width: 163px;
+      height: 45px;
+    }
+    .threeM8 {
+      width: 123px;
+      height: 70px;
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .swiper-slide {
+      height: 50vw;
+      background-size: cover;
+      flex-direction: column;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: normal;
+    }
+    .swiper-slide h2 {
+      font-size: 2.45vw;
+    }
+    .swiper-slide h3 {
+      font-size: 1.2vw;
+    }
+    .swiper-wrapper .swiper-slide:nth-child(1) {
+      background-image: url(titleM.png);
+    }
+    .swiper-wrapper .swiper-slide:nth-child(2) {
+      background-image: url(titleM2.png);
+    }
+    .swiper-wrapper .swiper-slide:nth-child(3) {
+      background-image: url(titleM3.png);
+    }
+    .swiper-wrapper .swiper-slide:nth-child(3) h3 {
+      background-color: rgba(4, 81, 132, 0.6);
+      padding: 0.25vw 1.5vw;
+    }
+    .swiper-wrapper .swiper-slide:nth-child(4) {
+      background-image: url(titleM4.png);
+    }
+    .swiper-wrapper .swiper-slide:nth-child(4) h2 {
+      padding: 0 2.5vw;
+      background-color: rgba(4, 81, 132, 0.6);
+    }
+    .swiper-wrapper .swiper-slide:nth-child(5) {
+      background-image: url(titleM5.png);
+    }
+    .swiper-wrapper .swiper-slide:nth-child(5) h2 {
+      background-color: rgba(4, 81, 132, 0.6);
+      padding: 0 2.5vw;
+    }
+    .swiper-wrapper .swiper-slide:nth-child(6) {
+      background-image: url(titleM6.png);
+    }
+    .swiper-wrapper .swiper-slide:nth-child(6) h2 {
+      font-size: 6.1vw;
+    }
+    .swiper-wrapper .swiper-slide:nth-child(6) h3 {
+      font-size: 1.59vw;
+    }
+    .swiper-wrapper .swiper-slide:nth-child(7) {
+      background-image: url(titleM7.png);
+    }
+    .swiper-wrapper .swiper-slide:nth-child(7) h3 {
+      padding: 0 1.5vw;
+      background-color: rgba(4, 81, 132, 0.6);
+    }
+    .swiper-wrapper .swiper-slide:nth-child(8) {
+      background-image: url(titleM8.png);
+    }
+    .swiper-wrapper .swiper-slide:nth-child(8) h2 {
+      font-size: 6.1vw;
+    }
+    .swiper-wrapper .swiper-slide:nth-child(8) h3 {
+      font-size: 1.59vw;
+      padding: 0 1.5vw;
+    }
+
+    .swiper-slide .btn {
+      font-size: 1.1vw;
+      margin-top: 20vw;
+    }
+    .swiper-slide .btn a {
+      color: #ffffff;
+      background-color: rgba(61, 155, 233, 0.6);
+      padding: 1vw;
+      margin: 0 2vw;
+    }
+
+    @media screen and (min-width: 992px) {
+      .navbar-collapse {
+        flex-grow: inherit;
+        margin: auto;
+      }
+      .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 1.3rem;
+        padding-left: 1.3rem;
+      }
+      .navbar.navbar-expand-lg.navbar-light.bg-light {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+      }
+      .swiper-slide .btn a:hover {
+        background-color: rgba(4, 81, 132, 1);
+        transition: 1s;
+      }
+    }
+    @media screen and (min-width: 767px) {
+      .city::before {
+        height: 126px;
+        font-size: 22px;
+        padding: 0 30px;
+      }
+    }
+    @media screen and (max-width: 335px) {
+      .navbar-toggler {
+        padding: 0.25em 0.025em;
+      }
+      .navbar-brand::before {
+        margin: 0 1px 0 0;
+      }
+      .supTxt {
+        margin-left: -14px;
+      }
+    }
+    @media screen and (max-width: 509px) {
+      .swiper-slide .btn {
+        display: none;
+      }
+    }
+  </style>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="box">
+          <a class="navbar-brand" href="#"> Build School </a>
+          <a class="supTxt" href="#"> developer career builder </a>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">台北班簡介</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">新竹班簡介</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                >校友會-台灣青築未來協會 Build the Future</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">歷屆老師</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">問題洽詢</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="swiper-container mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <h2>
+            <p>軟體工程師的路上</p>
+            <p>有人帶</p>
+          </h2>
+          <h3>
+            <p>START CODING AND GET COACHED FROM</p>
+            <p>MENTORS</p>
+          </h3>
+          <div class="btn">
+            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
+            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
+            <a href="#">招生說明會報名</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <h2>
+            <p>大量的程式練習</p>
+            <p>才能積累經驗</p>
+          </h2>
+          <h3>PRACTICE MAKES PERFECT</h3>
+          <div class="btn">
+            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
+            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
+            <a href="#">招生說明會報名</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <h2>
+            <p>想搭上火箭?</p>
+            <p>門票是給想成為軟體工程師的你</p>
+          </h2>
+          <h3>BUILD SCHOOL - DEVELOPER CAREER BUILDER</h3>
+          <div class="btn">
+            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
+            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
+            <a href="#">招生說明會報名</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <h2>
+            <p>動手做出東西</p>
+            <p>才能解決問題</p>
+          </h2>
+          <h3>
+            <p>BUILD SOMETHING AND SOLVE THE PROBLEM,</p>
+            <p>THAT'S MY STYLE</p>
+          </h3>
+          <div class="btn">
+            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
+            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
+            <a href="#">招生說明會報名</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <h2>
+            <p>這裏沒有考試</p>
+            <p>只有滿滿的程式碼</p>
+          </h2>
+          <h3>NO TEST BUT YOUR CODES</h3>
+          <div class="btn">
+            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
+            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
+            <a href="#">招生說明會報名</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <h2>BUILD SCHOOL</h2>
+          <h3>Build School 是軟體開發教育的先鋒 為您打造更有競爭力的職涯</h3>
+          <div class="btn">
+            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
+            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
+            <a href="#">招生說明會報名</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <h2>
+            <p>前往峰頂的路上</p>
+            <p>有人帶!</p>
+          </h2>
+          <h3>
+            <p>START CODING AND GET COACHED</p>
+            <p>FROM MENTORS</p>
+          </h3>
+          <div class="btn">
+            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
+            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
+            <a href="#">招生說明會報名</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <h2>BUILD SCHOOL</h2>
+          <h3>
+            <p>Build School is a pioneer of software developer</p>
+            <p>education and career builder for engineers</p>
+          </h3>
+          <div class="btn">
+            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
+            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
+            <a href="#">招生說明會報名</a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="comp">
+            <div class="a"><div class="b"></div></div>
+            <div class="c"></div>
+          </div>
+          <h2 class="item-1-h2">Build School</h2>
+          <h3 class="item-1-h3">/*我們的理念*/</h3>
+          <h4>
+            <span>Build = 將程式碼編譯及建置成</span>
+            <span>可執行的軟體</span>
+          </h4>
+          <h4>
+            <span>Build = </span>
+            <span>動手做</span>
+          </h4>
+          <h4>
+            <span>Build = 軟體開發</span>
+            <span>職涯的打造者</span>
+          </h4>
+        </div>
+        <div class="col-12 col-md-6">
+          <p class="item-1-p">實作及就業導向的軟體開發學校</p>
+          <p>
+            因應數位新時代的來臨，軟體、App、IoT
+            、SaaS、雲端平台的應用需求大爆炸，軟體工程師的招募需求持續上升，以2016年5月求職平台的統計資料，從高科技、電商、金融、傳產、網路服務、軟體資訊、新創等各行業，台灣至少有
+            27,000 位軟體開發工程師的職缺，甚至日本、新加坡等軟體及App
+            外商也來台灣求才。
+          </p>
+          <p>
+            為了彌補企業求才所需技能及實務教學上的落差，我們希望能幫助想搭上軟體開發及數位經濟這艘火箭的學員們，打造更有競爭力的職涯!
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p class="item-1-p">打造專案作品的學習方式</p>
+          <p class="item-1-p">(Project-based Learning)</p>
+          <p>
+            透過身經百戰的實務講師、各大企業的資深軟體工程師或CTO，帶領學員實作一個真正能運作的產品開發，解決真實世界的問題，透過專題過程中的實作，培養解決問題的能力，這裏不只是程式教學或教育訓練，學的不只是技能，而是
+            Learn how to
+            learn，以因應變化多端的軟體開發技能，及自主尋找解答的能力。
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <img src="asset 2.png" alt="" />
+          <h3 class="item-1-h3">動手實作才是真學習</h3>
+        </div>
+        <div class="col-12 col-md-6">
+          <img src="asset 3.png" alt="" />
+          <h3 class="item-1-h3">就業銜接</h3>
+        </div>
+        <div class="col-12 col-md-6">
+          <p class="item-1-p">真正企業職場所需技能</p>
+          <p class="item-1-p">(Career Readiness)</p>
+          <p>
+            除了透過打造專題作品過程，學到了技術及硬技能外，不同於一般的軟體培訓，我們更加入了簡報技巧、履歷及面試準備、以及真正軟體開發的團隊溝通及運作，這些軟實力
+            (Soft-Skill)
+            的培養，讓學員能提早做好準備，在職場上成為一位專業的軟體工程師!
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <p class="item-1-p">企業導師的連結</p>
+          <p class="item-1-p">(Mentor Network)</p>
+          <p>
+            每一位在軟體開發上有實務經驗的企業導師，他們是各大企業的主管、資深軟體工程師或
+            CTO，其人際連結及資源將帶給同學更多更好的就業機會，你將比別人站得更高，看得更遠!
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <img src="asset 4.png" alt="" />
+          <h3 class="item-1-h3">連結及影響力</h3>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="city">
+        <h2>18 - 24週的實作及作品開發 - 從訓練、就業、到企業連結</h2>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <div class="message-1">
+              <p>第 1 - 4 個月</p>
+              <div><img class="m" src="message-m.png" alt="" /></div>
+              <h3>程式基礎教學</h3>
+              <ul>
+                <li>業界實戰講師</li>
+                <li>企業主管/創業家/CTO 演講</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-1">
+              <p>第 5 - 6 個月</p>
+              <div><img class="m2" src="message-m2.png" alt="" /></div>
+              <h3>專案及作品導向實作</h3>
+              <ul>
+                <li>Web / App 作品開發 - 企業導師指導</li>
+                <li>不只是 Demo - 真實可運作成果</li>
+                <li>
+                  團隊開發 - 真實軟體開發團隊的運作及分工 (Agile敏捷, kanban
+                  看板, CI 自動化建置)
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-1">
+              <p>第 6 - 7 月</p>
+              <div><img class="m3" src="message-m3.png" alt="" /></div>
+              <h3>作品發表</h3>
+              <ul>
+                <li>簡報 Demo 及溝通技巧</li>
+                <li>作品及程式碼講解</li>
+                <li>個人履歷準備 – GitHub, CodePen …</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-1">
+              <p>未來及展望</p>
+              <div class="A">
+                <img class="m4" src="message-m4.png" alt="" />
+              </div>
+              <h3>就業及企業導師諮詢</h3>
+              <ul>
+                <li>就業媒合或未來職涯諮詢</li>
+                <li>企業導師 – 人際連結及資源</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="city">
+        <h2>
+          在課程及作品實作中，將採用這些工具 -
+          熟悉實務上軟體開發團隊的運作、分工及真實專案的流程
+        </h2>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <div class="message-2">
+              <div>
+                <img class="towM" src="message2-m.png" alt="" />
+                <img class="towM2" src="message2-m2.png" alt="" />
+              </div>
+              <h3>版本控管及程式碼管理</h3>
+              <ul>
+                <li>
+                  學員之練習及作品之程式碼，皆採用主流的 Git
+                  當版本控管，熟悉版控的各種操作及實務專案運用;
+                  課程中公開之練習程式碼，提交至 GitHub
+                  上，其它學員可參考或供講師 Code Review 檢閱，並熟悉 Open
+                  Source 生態及工具
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-2">
+              <div>
+                <img class="towM3" src="message2-m3.png" alt="" />
+                <img class="towM4" src="message2-m4.png" alt="" />
+              </div>
+              <h3>作品開發及團隊管理</h3>
+              <ul>
+                <li>
+                  除了使用 GitHub 外，專題開發階段也將使用 Microsoft Azure
+                  DevOps Services
+                  進行團隊開發、包括程式碼管理、工作項目追蹤、自動化建置等，熟悉一個軟體開發專案之流程、分工及日常工作。
+                </li>
+                <li>
+                  也可透過目前許多開發團隊常用的專案管理及看板工具 - Trello
+                  進行工作分派、追蹤、或整個班的工作事項管理
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-2">
+              <div>
+                <img class="towM5" src="message2-m5.png" alt="" />
+                <img class="towM6" src="message2-m6.png" alt="" />
+              </div>
+              <h3>雲端平台及服務</h3>
+              <ul>
+                <li>
+                  雲端平台的使用已逐漸成為一個成熟軟體開發團隊之基礎，並讓開發、測試、佈署工作更加的便利及自動化。因此學員將使用
+                  Microsoft Azure 當成作品及專案應用系統執行的雲端平台，包括
+                  Azure App Service 建立網站服務、Azure SQL Database
+                  建立資料庫服務
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-2">
+              <div>
+                <img class="towM7" src="message2-m7.png" alt="" />
+                <img class="towM8" src="message2-m8.png" alt="" />
+              </div>
+              <h3>團隊溝通協作及通知</h3>
+              <ul>
+                <li>
+                  課程過程中的線上討論、遠端溝通、或技術分享，將可透過 Microsoft
+                  Teams 或Slack 工具。另外練習的程式碼提交至 GitHub、或是 Trello
+                  上的工作狀態更新，或是 Azure DevOps
+                  上自動化建置的狀態，皆可發通知至 Microsoft Teams 或
+                  Slack，透過自動化提升工作效率，並熟悉一個軟體開發團隊的協同合作
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="city">
+        <h2>
+          我們的講師及企業導師擁有在這些公司的工作經歷、擔任主管或資深工程師
+        </h2>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <div class="message-3">
+              <div>
+                <img class="threeM" src="message3-m.png" alt="" />
+                <img class="threeM2" src="message3-m2.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-3">
+              <div>
+                <img class="threeM3" src="message3-m3.png" alt="" />
+                <img class="threeM4" src="message3-m4.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-3">
+              <div>
+                <img class="threeM5" src="message3-m5.png" alt="" />
+                <img class="threeM6" src="message3-m6.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-3">
+              <div>
+                <img class="threeM7" src="message3-m7.png" alt="" />
+                <img class="threeM8" src="message3-m8.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
