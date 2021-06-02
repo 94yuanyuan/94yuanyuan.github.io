@@ -18,7 +18,7 @@
   </head>
   <style>
     body * {
-      outline: 1px solid rebeccapurple;
+      /* outline: 1px solid rebeccapurple; */
       font-family: lulo-clean-w01-one-bold, sans-serif;
     }
     body * {
@@ -403,6 +403,74 @@
       margin: 0 2vw;
     }
 
+    .foot::before {
+      content: "";
+      display: block;
+      border-top: 5px solid rgba(0, 0, 0, 0.7);
+      margin: 15px 0 0 0;
+    }
+    .foot {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    .foot h2,
+    .foot h3 {
+      font-weight: 700;
+      line-height: normal;
+      text-align: justify;
+      width: 44.5vw;
+    }
+    .foot h2 {
+      font-size: 1.55vw;
+      text-align: center;
+    }
+    .foot h3 {
+      font-size: 1.25vw;
+    }
+    .foot .item {
+      margin: 1.35vw 0 0 4.5vw;
+      width: 91vw;
+      display: flex;
+    }
+    .foot ul {
+      font-size: 1vw;
+      margin-left: auto;
+      width: 44.5vw;
+    }
+    .foot li a {
+      color: #000;
+    }
+    .foot ul :nth-child(1),
+    .foot ul :nth-child(2),
+    .foot ul :nth-child(3) {
+      line-height: 20.8px;
+    }
+    .foot ul :nth-child(4) a {
+      line-height: 22.1px;
+    }
+    .foot ul :nth-child(5) {
+      line-height: 22.1px;
+    }
+    .footIcon {
+      display: flex;
+      margin: 2vw 0 0 4.5vw;
+      width: 91vw;
+      padding: 0 0 1.125vw 0;
+    }
+    .footIcon img {
+      width: 2.25vw;
+      height: 2.25vw;
+      margin: 0 1vw 0 0;
+    }
+    .footIcon a {
+      font-size: 0.9vw;
+      color: #000;
+      margin-top: auto;
+    }
+    .footIcon p {
+      font-size: 1vw;
+      margin-top: auto;
+      margin-left: auto;
+    }
     @media screen and (min-width: 992px) {
       .navbar-collapse {
         flex-grow: inherit;
@@ -456,7 +524,39 @@
         width: 123px;
         height: 70px;
       }
+
+      .foot .item {
+        margin: 1.35vw 0 0 20vw;
+        width: 25vw;
+        display: block;
+      }
+      .foot h2,
+      .foot h3 {
+        width: 25vw;
+      }
+      .foot h3 {
+        margin: 0 0 2.8vw;
+      }
+      .foot ul {
+        width: 60vw;
+      }
+      .foot ul :nth-child(1),
+      .foot ul :nth-child(2),
+      .foot ul :nth-child(3) {
+        line-height: 1.35vw;
+      }
+      .foot ul :nth-child(4) a {
+        line-height: 1.4vw;
+      }
+      .foot ul :nth-child(5) {
+        line-height: 1.4vw;
+      }
+      .footIcon {
+        margin: 2vw 0 0 20vw;
+        width: 60vw;
+      }
     }
+
     @media screen and (min-width: 767px) {
       .city::before {
         height: 126px;
@@ -985,6 +1085,34 @@
               <img class="threeM8" src="message3-m8.png" alt="" />
             </div>
           </div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="item">
+          <div>
+            <h2>合作及接洽</h2>
+            <h3>
+              若為企業欲徵才、或非營利組織或公益團體希望參加我們的培訓或公益合作、或成為我們的講師或擔任指導學生的企業導師
+              (Inspire Mentor)，請與我們連絡
+            </h3>
+          </div>
+          <ul>
+            <li>Build School​ 青杉人才有限公司 | 青群科技有限公司</li>
+            <li>社團法人台灣青築未來協會 Build the Future</li>
+            <li>(內政部立案 : 台內團字第 1090033261 號)</li>
+            <li>
+              <a href="#">email: contact@build-school.com 電話: 02-66057606</a>
+            </li>
+            <li>
+              台北市忠孝東路三段96號11F-1 (台北科大對面/忠孝新生站3號出口)
+            </li>
+          </ul>
+        </div>
+        <div class="footIcon">
+          <a href="#"><img src="footI.png" alt="" /></a>
+          <a href="#"><img src="footI2.png" alt="" /></a>
+          <a href="#">隱私權宣告</a>
+          <p>© 2021 by Build School</p>
         </div>
       </div>
     </div>
