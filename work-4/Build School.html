@@ -18,7 +18,7 @@
   </head>
   <style>
     body * {
-      /* outline: 1px solid rebeccapurple; */
+      outline: 1px solid rebeccapurple;
       font-family: lulo-clean-w01-one-bold, sans-serif;
     }
     body * {
@@ -154,6 +154,9 @@
       background-size: cover;
     }
 
+    .row {
+      text-align: justify;
+    }
     .message-1 img {
       display: flex;
       margin: auto;
@@ -198,9 +201,14 @@
       font-size: 16px;
       line-height: 1.4em;
       margin-left: 15%;
+      margin-right: 15%;
     }
     .message-1 li {
       list-style: disc;
+    }
+    .col-12.col-md-6 h4 {
+      margin-left: 15%;
+      margin-right: 15%;
     }
 
     .message-2 img {
@@ -208,7 +216,6 @@
       margin: 0 auto 25px;
     }
     .message-2 div {
-      height: 182px;
       margin: 50px 0 25px 0;
     }
     .towM {
@@ -253,63 +260,47 @@
       font-size: 16px;
       line-height: 1.4em;
       margin-left: 15%;
+      margin-right: 15%;
     }
     .message-2 li {
       list-style: disc;
     }
 
-    .message-3 {
-      margin: 50px 0 25px;
-    }
     .message-3 img {
       display: flex;
-    }
-    .row :nth-child(1) .message-3 img {
-      margin: 0 auto 25px;
-    }
-    .row :nth-child(2) .message-3 img {
-      margin: 0 auto 10px;
-    }
-    .row :nth-child(3) .message-3 img {
-      margin: 0 auto 15px;
-    }
-    .row :nth-child(4) .message-3 img {
-      margin: 0 auto 20px;
-    }
-    .message-3 .message-3 div {
-      margin: 50px 0 25px 0;
+      margin: 20px auto;
     }
     .threeM {
-      width: 184px;
-      height: 53px;
+      width: calc(184px * 0.6);
+      height: calc(53px * 0.6);
     }
     .threeM2 {
-      width: 159px;
-      height: 53px;
+      width: calc(159px * 0.6);
+      height: calc(53px * 0.6);
     }
     .threeM3 {
-      width: 187px;
-      height: 64px;
+      width: calc(187px * 0.6);
+      height: calc(64px * 0.6);
     }
     .threeM4 {
-      width: 180px;
-      height: 61px;
+      width: calc(180px * 0.6);
+      height: calc(61px * 0.6);
     }
     .threeM5 {
-      width: 159px;
-      height: 50px;
+      width: calc(159px * 0.6);
+      height: calc(50px * 0.6);
     }
     .threeM6 {
-      width: 105px;
-      height: 70px;
+      width: calc(105px * 0.6);
+      height: calc(70px * 0.6);
     }
     .threeM7 {
-      width: 163px;
-      height: 45px;
+      width: calc(163px * 0.6);
+      height: calc(45px * 0.6);
     }
     .threeM8 {
-      width: 123px;
-      height: 70px;
+      width: calc(123px * 0.6);
+      height: calc(70px * 0.6);
     }
 
     .swiper-container {
@@ -433,12 +424,80 @@
         background-color: rgba(4, 81, 132, 1);
         transition: 1s;
       }
+      .threeM {
+        width: 184px;
+        height: 53px;
+      }
+      .threeM2 {
+        width: 159px;
+        height: 53px;
+      }
+      .threeM3 {
+        width: 187px;
+        height: 64px;
+      }
+      .threeM4 {
+        width: 180px;
+        height: 61px;
+      }
+      .threeM5 {
+        width: 159px;
+        height: 50px;
+      }
+      .threeM6 {
+        width: 105px;
+        height: 70px;
+      }
+      .threeM7 {
+        width: 163px;
+        height: 45px;
+      }
+      .threeM8 {
+        width: 123px;
+        height: 70px;
+      }
     }
     @media screen and (min-width: 767px) {
       .city::before {
         height: 126px;
         font-size: 22px;
         padding: 0 30px;
+      }
+      .towM {
+        width: 46%;
+        height: 31.9%;
+      }
+      .towM2 {
+        width: 39%;
+        height: 54.42%;
+      }
+      .towM3 {
+        width: 46.3%;
+        height: 40%;
+      }
+      .towM4 {
+        width: 46%;
+        height: 24.2%;
+      }
+      .towM5 {
+        width: 57.5%;
+        height: 28%;
+      }
+      .towM6 {
+        width: 18%;
+        height: 40%;
+      }
+      .towM7 {
+        width: 65.5%;
+        height: 28%;
+      }
+      .towM8 {
+        width: 52.5%;
+        height: 40%;
+      }
+      .message-1 ul,
+      .message-2 ul {
+        margin-right: 0;
       }
     }
     @media screen and (max-width: 335px) {
@@ -455,6 +514,44 @@
     @media screen and (max-width: 520px) {
       .swiper-slide .btn {
         display: none;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      .threeM {
+        width: 184px;
+        height: 53px;
+      }
+      .threeM2 {
+        width: 159px;
+        height: 53px;
+      }
+      .threeM3 {
+        width: 187px;
+        height: 64px;
+      }
+      .threeM4 {
+        width: 180px;
+        height: 61px;
+      }
+      .threeM5 {
+        width: 159px;
+        height: 50px;
+      }
+      .threeM6 {
+        width: 105px;
+        height: 70px;
+      }
+      .threeM7 {
+        width: 163px;
+        height: 45px;
+      }
+      .threeM8 {
+        width: 123px;
+        height: 70px;
+      }
+      .row :nth-child(1) .message-3 img {
+        position: relative;
+        left: 10px;
       }
     }
   </style>
@@ -850,34 +947,42 @@
         <div class="row">
           <div class="col-12 col-md-3">
             <div class="message-3">
-              <div>
-                <img class="threeM" src="message3-m.png" alt="" />
-                <img class="threeM2" src="message3-m2.png" alt="" />
-              </div>
+              <img class="threeM" src="message3-m.png" alt="" />
             </div>
           </div>
           <div class="col-12 col-md-3">
             <div class="message-3">
-              <div>
-                <img class="threeM3" src="message3-m3.png" alt="" />
-                <img class="threeM4" src="message3-m4.png" alt="" />
-              </div>
+              <img class="threeM2" src="message3-m2.png" alt="" />
             </div>
           </div>
           <div class="col-12 col-md-3">
             <div class="message-3">
-              <div>
-                <img class="threeM5" src="message3-m5.png" alt="" />
-                <img class="threeM6" src="message3-m6.png" alt="" />
-              </div>
+              <img class="threeM3" src="message3-m3.png" alt="" />
             </div>
           </div>
           <div class="col-12 col-md-3">
             <div class="message-3">
-              <div>
-                <img class="threeM7" src="message3-m7.png" alt="" />
-                <img class="threeM8" src="message3-m8.png" alt="" />
-              </div>
+              <img class="threeM4" src="message3-m4.png" alt="" />
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-3">
+              <img class="threeM5" src="message3-m5.png" alt="" />
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-3">
+              <img class="threeM6" src="message3-m6.png" alt="" />
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-3">
+              <img class="threeM7" src="message3-m7.png" alt="" />
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="message-3">
+              <img class="threeM8" src="message3-m8.png" alt="" />
             </div>
           </div>
         </div>
