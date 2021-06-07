@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="junbotron bg-info">
+      <h1>台灣水庫即時水情</h1>
+    </div>
+
+    <div id="container"></div>
+    <script>
+      let Titles = ["水庫","地址","蓄水量(萬立方公尺)","百分比(%)","水上升量(%)"]
+
+      let sinShan = ["新山", "基隆", 901.48, 89.9, 0.69];
+      let feiTsuei = ["翡翠", "台北、新北", 28263.66, 84.2, 2.6];
+      let shihMen = ["石門", "新北、桃園、新竹", 5599.56, 27.6, 2.2];
+      let yongHe = ["永和", "新竹、苗栗", 470.05, 15.6, 1.61];
+
+      let Total = [sinShan, feiTsuei, shihMen, yongHe];
+
+      let container = document.getElementById("container");
+      let table = document.createElement("table");
+      table.setAttribute(
+        "class",
+        "table table-bordered table-striped table-dark"
+      );
+
+      let thead = document.createElement("thead");
+      let tbody = document.createElement("tbody");
+
+      window.onload = function () {
+        createTable(Titles, Total);
+        container.appendChild(table);
+      };
+      function createTable(titles, rowsArray) {
+        AddRow(thead, titles);
+
+        rowsArray.forEach(function (item) {
+          AddRow(tbody, item);
+        });
+      }
+
+      function AddRow(target, rowData) {
+        let _row = document.createElement("tr");
+
+        rowData.forEach(function (col) {
+          let td = document.createElement("td");
+          let tdText = document.createTextNode(col);
+          td.appendChild(tdText);
+          _row.appendChild(td);
+        });
+
+        target.appendChild(_row);
+        table.appendChild(target);
+      }
+    </script>
+  </body>
+</html>
