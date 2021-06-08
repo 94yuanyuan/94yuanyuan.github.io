@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="Reset.css" />
+  </head>
+  <style>
+    body * {
+      font-family: lulo-clean-w01-one-bold, sans-serif;
+    }
+    .thead {
+      border: 1px solid;
+      width: 500px;
+      height: 100px;
+      margin: 50px auto;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
+    }
+    .tbody {
+      width: 150px;
+      height: 100vh;
+      margin: auto;
+
+      display: flex;
+      flex-direction: column;
+    }
+    .play {
+      width: 80%;
+      height: 6%;
+      margin: 1px auto;
+      font-size: 20px;
+      color: #fff;
+      background-color: dodgerblue;
+      border-radius: 5px;
+    }
+    .confirm {
+      display: none;
+      width: 80%;
+      height: 6%;
+      margin: 1px auto;
+      font-size: 20px;
+      color: #000;
+      background-color: lawngreen;
+      border-radius: 5px;
+    }
+    .item button {
+      width: 44px;
+      height: 56px;
+      margin: 3px;
+      font-size: 25px;
+      color: #fff;
+      background-color: black;
+      border-radius: 5px;
+    }
+    .item #btnX {
+      color: red;
+    }
+    .ans {
+      color: #fff;
+    }
+  </style>
+  <body>
+    <div class="thead">
+      <div class="nrMin" id="ansMin">0</div>
+      <div class="link" id="dash">~</div>
+      <div class="nrMax" id="ansMax">100</div>
+    </div>
+    <div class="tbody">
+      <button class="play" id="createNr">產生數字</button>
+      <button class="confirm" id="confirm">確認</button>
+      <input type="text" id="inp" />
+      <div class="item" id="cItem"></div>
+    </div>
+    <div class="ans" id="Ans"></div>
+
+    <script>
+      let cItem = document.getElementById("cItem");
+      const cNr = document.getElementById("createNr");
+      cNr.onclick = function (event) {
+        let Ans = document.getElementById("Ans");
+        Ans.innerText = Math.floor(Math.random() * 101) + 1;
+
+        let inp = document.getElementById("inp");
+        inp.value = "";
+        let ansMax = document.getElementById("ansMax");
+        ansMax.innerText = 100;
+        let ansMin = document.getElementById("ansMin");
+        ansMin.innerText = 0;
+        let dash = document.getElementById("dash");
+        dash.innerText = "~";
+        dash.style = "color:black"; //初始化
+
+        for (i = 1; i < 10; i++) {
+          let btn = document.createElement("button");
+          btn.setAttribute("id", `btn${i}`);
+          btn.innerText = `${i}`;
+          cItem.appendChild(btn);
+
+          const btn1_9 = document.getElementById("btn" + i);
+          btn1_9.onclick = function (event) {
+            let inp = document.getElementById("inp");
+            inp.value = inp.value + btn1_9.innerText;
+          };
+        }
+        for (i = 0; i < 2; i++) {
+          let btn = document.createElement("button");
+          let A = ["X", 0];
+          btn.setAttribute("id", `btn${A[i]}`);
+          btn.innerText = `${A[i]}`;
+          cItem.appendChild(btn);
+
+          const btnX_0 = document.getElementById("btn" + A[i]);
+          btnX_0.onclick = function (event) {
+            if (btnX_0 == btnX) {
+              inp.value = "";
+            }
+            if (btnX_0 == btn0) {
+              inp.value = inp.value + btnX_0.innerText;
+            }
+          };
+        }
+        cNrS.style = "display:none";
+        cmAns.style = "display:block";
+      };
+      let cNrS = document.querySelector(".tbody .play");
+      let cmAns = document.querySelector(".tbody .confirm");
+      cmAns.onclick = function (event) {
+        if (inp.value == Ans.innerText) {
+          inp.value = "猜對了!";
+          cNrS.style = "display:block";
+          cmAns.style = "display:none";
+          dash.innerText = Ans.innerText;
+          dash.style = "color:red";
+          ansMax.innerText = "";
+          ansMin.innerText = "";
+          cItem.innerHTML = "";
+          // myFunction();
+        } else {
+          if (parseInt(inp.value) > parseInt(Ans.innerText)) {
+            ansMax.innerText = inp.value;
+          } else {
+            ansMin.innerText = inp.value;
+          }
+          inp.value = "";
+        }
+      };
+    </script>
+  </body>
+</html>
