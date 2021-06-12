@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Reset.css" />
+  </head>
+  <style>
+    body * {
+      font-family: lulo-clean-w01-one-bold, sans-serif;
+    }
+    .thead {
+      width: 90%;
+      margin: 5% auto;
+      display: flex;
+      justify-content: center;
+    }
+    .thead button {
+      width: 33.3%;
+      background: transparent;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+
+      font-size: 20px;
+      padding: 10px 0;
+    }
+    .thead button:focus,
+    .tfoot button:focus {
+      border: 1px solid rgba(0, 0, 0, 0.4);
+    }
+    .tbody {
+      width: 90%;
+      height: 247px;
+      background: transparent;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin: auto;
+      overflow: auto;
+    }
+    .tbody div {
+      height: 28.4px;
+      line-height: 28.4px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      padding: 10px 0;
+    }
+    .tbody .processAns,
+    .tbody .process {
+      border: none;
+    }
+    .tbody .processAns {
+      background-color: lightcoral;
+      border-radius: 3px;
+      padding: 0 15px;
+      margin: 0 10px 0 20px;
+    }
+    .tbody .bgc-lightgreen {
+      background-color: lightgreen;
+    }
+    .tbody .process {
+      color: #000;
+      padding: 0;
+    }
+    .tfoot {
+      width: 90%;
+      margin: 5% auto;
+      display: flex;
+      font-size: 20px;
+    }
+    .tfoot div,
+    .tfoot input,
+    .tfoot button {
+      border: 1px solid #ccc;
+    }
+    .tfoot div,
+    .tfoot button {
+      padding: 5px 10px;
+    }
+    .tfoot div {
+      line-height: 32.4px;
+      background-color: rgba(0, 0, 0, 0.15);
+      border-radius: 3px 0 0 3px;
+    }
+    .tfoot input {
+      flex-grow: 1;
+      outline: none;
+    }
+    .tfoot button {
+      font-size: 20px;
+      background-color: transparent;
+      border-radius: 0 3px 3px 0;
+    }
+  </style>
+  <body>
+    <div class="thead">
+      <button id="play">開始</button>
+      <button id="gameOver">放棄重來</button>
+      <button id="Ans">看答案</button>
+    </div>
+    <div class="tbody" id="cItem"></div>
+    <div class="tfoot">
+      <div>猜答案</div>
+      <input type="text" id="inp" />
+      <button id="enter">猜!</button>
+    </div>
+    <script>
+      let correct = "";
+      let guess;
+      let play = document.getElementById("play");
+      play.onclick = function (event) {
+        do {
+          let nr = Math.floor(Math.random() * 10);
+          if (correct === "" || !correct.includes(nr)) {
+            correct += nr;
+          }
+        } while (correct.length < 4);
+        play.disabled = true;
+        enter.disabled = false;
+        gameOver.disabled = false;
+        guess = correct.split("");
+      };
+
+      let gameOver = document.getElementById("gameOver");
+      gameOver.disabled = true;
+      gameOver.onclick = function (evemt) {
+        correct = "";
+        cItem.innerHTML = "";
+        inp.value = "";
+        play.disabled = false;
+        gameOver.innerText = "放棄重來";
+        play.onclick();
+      };
+
+      let Ans = document.getElementById("Ans");
+      Ans.onclick = function (event) {
+        if (correct != "") {
+          alert(`答案是: ${correct}`);
+        } else {
+          alert(`請先開始遊戲`);
+        }
+      };
+
+      let enter = document.getElementById("enter");
+      let inp = document.getElementById("inp");
+      let cItem = document.getElementById("cItem");
+      let guessA;
+      enter.onclick = function (event) {
+        if (correct.length === 4) {
+          if (inp.value.length === 4) {
+            guessA = inp.value.split("");
+            let banana = guess.filter((x) => guessA.includes(x));
+            let b = banana.length;
+            let a = banana.filter(
+              (x) => guess.indexOf(x) == guessA.indexOf(x)
+            ).length;
+            b = b - a;
+
+            let process = document.createElement("div");
+            let ans = document.createElement("div");
+            ans.setAttribute("class", "processAns");
+            ans.innerText = `${a}A${b}B`;
+            if (a === 4) {
+              ans.setAttribute("class", "processAns bgc-lightgreen");
+              alert(`恭喜,猜對了!`);
+              enter.disabled = true;
+              gameOver.innerText = "重新開始";
+            }
+            process.appendChild(ans);
+            process.innerHTML += "<div class='process'>" + `${inp.value}`;
+            cItem.appendChild(process);
+
+            inp.value = "";
+          } else {
+            alert(`請輸入4個數字`);
+          }
+        } else {
+          alert(`請先開始遊戲`);
+        }
+      };
+    </script>
+  </body>
+</html>
