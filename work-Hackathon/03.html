@@ -28,9 +28,9 @@
       bottom: 0;
     }
     .thead button {
-      font-size: 5vw;
       height: 5vw;
       line-height: 5vw;
+      font-size: 5vw;
       border: 1px solid transparent;
       background-color: transparent;
       position: absolute;
@@ -39,8 +39,8 @@
       transition: 0.5s;
     }
     .thead button:hover {
-      background-color: #ccc;
       border: 1px solid #bbb;
+      background-color: #ccc;
     }
     .thead button:active {
       background-color: #aaa;
@@ -66,8 +66,8 @@
       transition: 0.25s;
     }
     .tbody button:hover {
-      background-color: #ccc;
       border: 1px solid #bbb;
+      background-color: #ccc;
     }
     .tbody button:active {
       background-color: #aaa;
@@ -81,14 +81,58 @@
       top: 5vw;
     }
 
-    /* .time {
-      height: 20vw;
-    } */
+    .tfoot {
+      width: 40vw;
+      margin: auto;
+    }
+    .tfoot:nth-child(odd) {
+      height: 20.8vw;
+      background-color: #eee;
+      position: relative;
+      bottom: 20.8vw;
+      overflow: auto;
+      display: none;
+    }
+    .tfoot:nth-child(even) {
+      height: 16.7vw;
+      background-color: #ccc;
+      position: relative;
+      bottom: 58.3vw;
+      display: none;
+    }
+    .record {
+      height: 5.2vw;
+      line-height: 5.2vw;
+      font-size: 2vw;
+      text-align: right;
+      padding: 0 2vw;
+    }
+    .record:hover {
+      background-color: #ddd;
+    }
+    .tfoot button {
+      height: 5vw;
+      line-height: 5vw;
+      font-size: 5vw;
+      border: 1px solid transparent;
+      background-color: #ccc;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: 0.5s;
+    }
+    .tfoot button:hover {
+      border: 1px solid #aaa;
+      background-color: #bbb;
+    }
+    .tfoot button:active {
+      background-color: #aaa;
+    }
   </style>
   <body>
     <div class="thead">
       <input id="inp" type="text" />
-      <button>◷</button>
+      <button id="reD">◷</button>
       <div class="spurious" id="spuCR"></div>
     </div>
     <div class="tbody">
@@ -110,10 +154,26 @@
         <button id="btn=">=</button>
         <button id="btn+">+</button>
       </div>
-      <div class="time"></div>
+    </div>
+    <div class="tfoot" id="tfoot"></div>
+    <div class="tfoot" id="tfootEvn">
+      <button id="crReD">◶</button>
     </div>
 
     <script>
+      let tfoot = document.getElementById("tfoot");
+      let tfootEvn = document.getElementById("tfootEvn");
+      let reD = document.getElementById("reD");
+      let crReD = document.getElementById("crReD");
+      reD.onclick = function (event) {
+        tfoot.style = "display:block";
+        tfootEvn.style = "display:block";
+      };
+      crReD.onclick = function (event) {
+        tfoot.style = "display:none";
+        tfootEvn.style = "display:none";
+      };
+
       let cR = []; //Calculation paper
       let inp = document.getElementById("inp");
       for (i = 0; i < 10; i++) {
@@ -198,14 +258,12 @@
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
-                console.log("666");
               }
               if (spuCR.innerText.charAt(spuCR.innerText.length - 1) === "-") {
                 cR[0] = Number(cR[0]) - Number(inp.value);
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
-                console.log("777");
               }
               spuCR.innerText += "*";
             } else {
@@ -231,14 +289,12 @@
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
-                console.log("888");
               }
               if (spuCR.innerText.charAt(spuCR.innerText.length - 1) === "-") {
                 cR[0] = Number(cR[0]) - Number(inp.value);
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
-                console.log("999");
               }
               spuCR.innerText += "/";
             } else {
