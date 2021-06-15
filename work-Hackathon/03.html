@@ -131,21 +131,19 @@
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
-                keep.push("+");
               }
               if (spuCR.innerText.charAt(spuCR.innerText.length - 1) === "/") {
                 cR[0] = Number(cR[0]) / Number(inp.value);
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
-                keep.push("+");
               }
               spuCR.innerText += "+";
             } else {
-              keep.push("+");
               spuCR.innerText += `${inp.value}+`;
               cR.push(Number(inp.value));
             }
+            keep.push("+");
             inp.value = null;
             if (cR.length > 1) {
               if ((cR.length != 1) & (keep[keep.length - 2] === "-")) {
@@ -164,21 +162,19 @@
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
-                keep.push("*");
               }
               if (spuCR.innerText.charAt(spuCR.innerText.length - 1) === "/") {
                 cR[0] = Number(cR[0]) / Number(inp.value);
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
-                keep.push("*");
               }
               spuCR.innerText += "-";
             } else {
-              keep.push("-");
               spuCR.innerText += `${inp.value}-`;
               cR.push(Number(inp.value));
             }
+            keep.push("-");
             inp.value = null;
             if (cR.length > 1) {
               if ((cR.length != 1) & (keep[keep.length - 2] === "+")) {
@@ -197,21 +193,19 @@
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
-                keep.push("*");
               }
               if (spuCR.innerText.charAt(spuCR.innerText.length - 1) === "-") {
                 cR[0] = Number(cR[0]) - Number(inp.value);
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
-                keep.push("*");
               }
               spuCR.innerText += "*";
             } else {
-              keep.push("*");
               spuCR.innerText += `${inp.value}*`;
               cR.push(Number(inp.value));
             }
+            keep.push("*");
             inp.value = null;
             if (cR.length > 1) {
               if ((cR.length != 1) & (keep[keep.length - 2] === "/")) {
@@ -230,21 +224,19 @@
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
-                keep.push("/");
               }
               if (spuCR.innerText.charAt(spuCR.innerText.length - 1) === "-") {
                 cR[0] = Number(cR[0]) - Number(inp.value);
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
-                keep.push("/");
               }
               spuCR.innerText += "/";
             } else {
-              keep.push("/");
               spuCR.innerText += `${inp.value}/`;
               cR.push(Number(inp.value));
             }
+            keep.push("/");
             inp.value = null;
             if (cR.length > 1) {
               if (cR.length > 1) {
