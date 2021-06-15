@@ -80,6 +80,10 @@
       position: relative;
       top: 5vw;
     }
+
+    /* .time {
+      height: 20vw;
+    } */
   </style>
   <body>
     <div class="thead">
@@ -106,6 +110,7 @@
         <button id="btn=">=</button>
         <button id="btn+">+</button>
       </div>
+      <div class="time"></div>
     </div>
 
     <script>
@@ -125,7 +130,7 @@
 
         btnCount.onclick = function (event) {
           if (btnCount === document.getElementById("btn" + "+")) {
-            if (spuCR.innerText.includes("*", "/")) {
+            if (spuCR.innerText.includes("*") | spuCR.innerText.includes("/")) {
               if (spuCR.innerText.charAt(spuCR.innerText.length - 1) === "*") {
                 cR[0] = Number(cR[0]) * Number(inp.value);
                 cR.length = 1;
@@ -156,7 +161,7 @@
           }
 
           if (btnCount === document.getElementById("btn" + "-")) {
-            if (spuCR.innerText.includes("*", "/")) {
+            if (spuCR.innerText.includes("*") | spuCR.innerText.includes("/")) {
               if (spuCR.innerText.charAt(spuCR.innerText.length - 1) === "*") {
                 cR[0] = Number(cR[0]) * Number(inp.value);
                 cR.length = 1;
@@ -187,18 +192,20 @@
           }
 
           if (btnCount === document.getElementById("btn" + "*")) {
-            if (spuCR.innerText.includes("+", "-")) {
+            if (spuCR.innerText.includes("+") | spuCR.innerText.includes("-")) {
               if (spuCR.innerText.charAt(spuCR.innerText.length - 1) === "+") {
                 cR[0] = Number(cR[0]) + Number(inp.value);
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
+                console.log("666");
               }
               if (spuCR.innerText.charAt(spuCR.innerText.length - 1) === "-") {
                 cR[0] = Number(cR[0]) - Number(inp.value);
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
+                console.log("777");
               }
               spuCR.innerText += "*";
             } else {
@@ -218,18 +225,20 @@
           }
 
           if (btnCount === document.getElementById("btn" + "/")) {
-            if (spuCR.innerText.includes("+", "-")) {
+            if (spuCR.innerText.includes("+") | spuCR.innerText.includes("-")) {
               if (spuCR.innerText.charAt(spuCR.innerText.length - 1) === "+") {
                 cR[0] = Number(cR[0]) + Number(inp.value);
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
+                console.log("888");
               }
               if (spuCR.innerText.charAt(spuCR.innerText.length - 1) === "-") {
                 cR[0] = Number(cR[0]) - Number(inp.value);
                 cR.length = 1;
                 spuCR.innerText = cR[0];
                 keep = [];
+                console.log("999");
               }
               spuCR.innerText += "/";
             } else {
