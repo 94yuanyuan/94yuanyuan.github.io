@@ -1,408 +1,402 @@
-[
-  {
-    "iPhone": [
-      {
-        "id": "i12-01",
-        "model": "12Pro",
-        "storage": "128GB",
-        "price": 33900,
-        "color": "石墨色",
-        "picture": "graphite.png"
-      },
-      {
-        "id": "i12-02",
-        "model": "12Pro",
-        "storage": "128GB",
-        "price": 33900,
-        "color": "銀色",
-        "picture": "Silver.png"
-      },
-      {
-        "id": "i12-03",
-        "model": "12Pro",
-        "storage": "128GB",
-        "price": 33900,
-        "color": "金色",
-        "picture": "Golden.png"
-      },
-      {
-        "id": "i12-04",
-        "model": "12Pro",
-        "storage": "128GB",
-        "price": 33900,
-        "color": "太平洋藍色",
-        "picture": "blue.png"
-      },
+{
+  "iPhone": [
+    {
+      "id": "i12-01",
+      "model": "12Pro",
+      "storage": "128GB",
+      "price": 33900,
+      "color": "石墨色",
+      "picture": "graphite.png"
+    },
+    {
+      "id": "i12-02",
+      "model": "12Pro",
+      "storage": "128GB",
+      "price": 33900,
+      "color": "銀色",
+      "picture": "Silver.png"
+    },
+    {
+      "id": "i12-03",
+      "model": "12Pro",
+      "storage": "128GB",
+      "price": 33900,
+      "color": "金色",
+      "picture": "Golden.png"
+    },
+    {
+      "id": "i12-04",
+      "model": "12Pro",
+      "storage": "128GB",
+      "price": 33900,
+      "color": "太平洋藍色",
+      "picture": "blue.png"
+    },
 
-      {
-        "id": "i12-05",
-        "model": "12Pro",
-        "storage": "256GB",
-        "price": 37400,
-        "color": "石墨色",
-        "picture": "graphite.png"
-      },
-      {
-        "id": "i12-06",
-        "model": "12Pro",
-        "storage": "256GB",
-        "price": 37400,
-        "color": "銀色",
-        "picture": "Silver.png"
-      },
-      {
-        "id": "i12-07",
-        "model": "12Pro",
-        "storage": "256GB",
-        "price": 37400,
-        "color": "金色",
-        "picture": "Golden.png"
-      },
-      {
-        "id": "i12-08",
-        "model": "12Pro",
-        "storage": "256GB",
-        "price": 37400,
-        "color": "太平洋藍色",
-        "picture": "blue.png"
-      },
+    {
+      "id": "i12-05",
+      "model": "12Pro",
+      "storage": "256GB",
+      "price": 37400,
+      "color": "石墨色",
+      "picture": "graphite.png"
+    },
+    {
+      "id": "i12-06",
+      "model": "12Pro",
+      "storage": "256GB",
+      "price": 37400,
+      "color": "銀色",
+      "picture": "Silver.png"
+    },
+    {
+      "id": "i12-07",
+      "model": "12Pro",
+      "storage": "256GB",
+      "price": 37400,
+      "color": "金色",
+      "picture": "Golden.png"
+    },
+    {
+      "id": "i12-08",
+      "model": "12Pro",
+      "storage": "256GB",
+      "price": 37400,
+      "color": "太平洋藍色",
+      "picture": "blue.png"
+    },
 
-      {
-        "id": "i12-09",
-        "model": "12Pro",
-        "storage": "512GB",
-        "price": 44400,
-        "color": "石墨色",
-        "picture": "graphite.png"
-      },
-      {
-        "id": "i12-10",
-        "model": "12Pro",
-        "storage": "512GB",
-        "price": 44400,
-        "color": "銀色",
-        "picture": "Silver.png"
-      },
-      {
-        "id": "i12-11",
-        "model": "12Pro",
-        "storage": "512GB",
-        "price": 44400,
-        "color": "金色",
-        "picture": "Golden.png"
-      },
-      {
-        "id": "i12-12",
-        "model": "12Pro",
-        "storage": "512GB",
-        "price": 44400,
-        "color": "太平洋藍色",
-        "picture": "blue.png"
-      },
+    {
+      "id": "i12-09",
+      "model": "12Pro",
+      "storage": "512GB",
+      "price": 44400,
+      "color": "石墨色",
+      "picture": "graphite.png"
+    },
+    {
+      "id": "i12-10",
+      "model": "12Pro",
+      "storage": "512GB",
+      "price": 44400,
+      "color": "銀色",
+      "picture": "Silver.png"
+    },
+    {
+      "id": "i12-11",
+      "model": "12Pro",
+      "storage": "512GB",
+      "price": 44400,
+      "color": "金色",
+      "picture": "Golden.png"
+    },
+    {
+      "id": "i12-12",
+      "model": "12Pro",
+      "storage": "512GB",
+      "price": 44400,
+      "color": "太平洋藍色",
+      "picture": "blue.png"
+    },
 
-      {
-        "id": "i12M-01",
-        "model": "12ProMax",
-        "storage": "512GB",
-        "price": 48400,
-        "color": "石墨色",
-        "picture": "graphite.png"
-      },
-      {
-        "id": "i12M-02",
-        "model": "12ProMax",
-        "storage": "512GB",
-        "price": 48400,
-        "color": "銀色",
-        "picture": "Silver.png"
-      },
-      {
-        "id": "i12M-03",
-        "model": "12ProMax",
-        "storage": "512GB",
-        "price": 48400,
-        "color": "金色",
-        "picture": "Golden.png"
-      },
-      {
-        "id": "i12M-04",
-        "model": "12ProMax",
-        "storage": "512GB",
-        "price": 48400,
-        "color": "太平洋藍色",
-        "picture": "blue.png"
-      },
+    {
+      "id": "i12M-01",
+      "model": "12ProMax",
+      "storage": "512GB",
+      "price": 48400,
+      "color": "石墨色",
+      "picture": "graphite.png"
+    },
+    {
+      "id": "i12M-02",
+      "model": "12ProMax",
+      "storage": "512GB",
+      "price": 48400,
+      "color": "銀色",
+      "picture": "Silver.png"
+    },
+    {
+      "id": "i12M-03",
+      "model": "12ProMax",
+      "storage": "512GB",
+      "price": 48400,
+      "color": "金色",
+      "picture": "Golden.png"
+    },
+    {
+      "id": "i12M-04",
+      "model": "12ProMax",
+      "storage": "512GB",
+      "price": 48400,
+      "color": "太平洋藍色",
+      "picture": "blue.png"
+    },
 
-      {
-        "id": "i12M-05",
-        "model": "12ProMax",
-        "storage": "256GB",
-        "price": 41400,
-        "color": "石墨色",
-        "picture": "graphite.png"
-      },
-      {
-        "id": "i12M-06",
-        "model": "12ProMax",
-        "storage": "256GB",
-        "price": 41400,
-        "color": "銀色",
-        "picture": "Silver.png"
-      },
-      {
-        "id": "i12M-07",
-        "model": "12ProMax",
-        "storage": "256GB",
-        "price": 41400,
-        "color": "金色",
-        "picture": "Golden.png"
-      },
-      {
-        "id": "i12M-08",
-        "model": "12ProMax",
-        "storage": "256GB",
-        "price": 41400,
-        "color": "太平洋藍色",
-        "picture": "blue.png"
-      },
+    {
+      "id": "i12M-05",
+      "model": "12ProMax",
+      "storage": "256GB",
+      "price": 41400,
+      "color": "石墨色",
+      "picture": "graphite.png"
+    },
+    {
+      "id": "i12M-06",
+      "model": "12ProMax",
+      "storage": "256GB",
+      "price": 41400,
+      "color": "銀色",
+      "picture": "Silver.png"
+    },
+    {
+      "id": "i12M-07",
+      "model": "12ProMax",
+      "storage": "256GB",
+      "price": 41400,
+      "color": "金色",
+      "picture": "Golden.png"
+    },
+    {
+      "id": "i12M-08",
+      "model": "12ProMax",
+      "storage": "256GB",
+      "price": 41400,
+      "color": "太平洋藍色",
+      "picture": "blue.png"
+    },
 
-      {
-        "id": "i12M-09",
-        "model": "12ProMax",
-        "storage": "128GB",
-        "price": 37900,
-        "color": "石墨色",
-        "picture": "graphite.png"
-      },
-      {
-        "id": "i12M-10",
-        "model": "12ProMax",
-        "storage": "128GB",
-        "price": 37900,
-        "color": "銀色",
-        "picture": "Silver.png"
-      },
-      {
-        "id": "i12M-11",
-        "model": "12ProMax",
-        "storage": "128GB",
-        "price": 37900,
-        "color": "金色",
-        "picture": "Golden.png"
-      },
-      {
-        "id": "i12M-12",
-        "model": "12ProMax",
-        "storage": "128GB",
-        "price": 37900,
-        "color": "太平洋藍色",
-        "picture": "blue.png"
-      }
-    ]
-  },
-  {
-    "iPad": [
-      {
-        "id": "Pd-01",
-        "network": "Wi-Fi",
-        "storage": "32GB",
-        "price": 10500,
-        "color": "太空灰色",
-        "picture": "iPd-graphite.png"
-      },
-      {
-        "id": "Pd-02",
-        "network": "Wi-Fi",
-        "storage": "32GB",
-        "price": 10500,
-        "color": "銀色",
-        "picture": "iPd-Silver.png"
-      },
-      {
-        "id": "Pd-03",
-        "network": "Wi-Fi",
-        "storage": "32GB",
-        "price": 10500,
-        "color": "金色",
-        "picture": "iPd-Golden.png"
-      },
+    {
+      "id": "i12M-09",
+      "model": "12ProMax",
+      "storage": "128GB",
+      "price": 37900,
+      "color": "石墨色",
+      "picture": "graphite.png"
+    },
+    {
+      "id": "i12M-10",
+      "model": "12ProMax",
+      "storage": "128GB",
+      "price": 37900,
+      "color": "銀色",
+      "picture": "Silver.png"
+    },
+    {
+      "id": "i12M-11",
+      "model": "12ProMax",
+      "storage": "128GB",
+      "price": 37900,
+      "color": "金色",
+      "picture": "Golden.png"
+    },
+    {
+      "id": "i12M-12",
+      "model": "12ProMax",
+      "storage": "128GB",
+      "price": 37900,
+      "color": "太平洋藍色",
+      "picture": "blue.png"
+    }
+  ],
+  "iPad": [
+    {
+      "id": "Pd-01",
+      "network": "Wi-Fi",
+      "storage": "32GB",
+      "price": 10500,
+      "color": "太空灰色",
+      "picture": "iPd-graphite.png"
+    },
+    {
+      "id": "Pd-02",
+      "network": "Wi-Fi",
+      "storage": "32GB",
+      "price": 10500,
+      "color": "銀色",
+      "picture": "iPd-Silver.png"
+    },
+    {
+      "id": "Pd-03",
+      "network": "Wi-Fi",
+      "storage": "32GB",
+      "price": 10500,
+      "color": "金色",
+      "picture": "iPd-Golden.png"
+    },
 
-      {
-        "id": "Pd-04",
-        "network": "Wi-Fi",
-        "storage": "128GB",
-        "price": 13500,
-        "color": "太空灰色",
-        "picture": "iPd-graphite.png"
-      },
-      {
-        "id": "Pd-05",
-        "network": "Wi-Fi",
-        "storage": "128GB",
-        "price": 13500,
-        "color": "銀色",
-        "picture": "iPd-Silver.png"
-      },
-      {
-        "id": "Pd-06",
-        "network": "Wi-Fi",
-        "storage": "128GB",
-        "price": 13500,
-        "color": "金色",
-        "picture": "iPd-Golden.png"
-      },
+    {
+      "id": "Pd-04",
+      "network": "Wi-Fi",
+      "storage": "128GB",
+      "price": 13500,
+      "color": "太空灰色",
+      "picture": "iPd-graphite.png"
+    },
+    {
+      "id": "Pd-05",
+      "network": "Wi-Fi",
+      "storage": "128GB",
+      "price": 13500,
+      "color": "銀色",
+      "picture": "iPd-Silver.png"
+    },
+    {
+      "id": "Pd-06",
+      "network": "Wi-Fi",
+      "storage": "128GB",
+      "price": 13500,
+      "color": "金色",
+      "picture": "iPd-Golden.png"
+    },
 
-      {
-        "id": "Pd-07",
-        "network": "Wi-Fi+mbe-nwk",
-        "storage": "128GB",
-        "price": 17800,
-        "color": "太空灰色",
-        "picture": "iPd-graphite.png"
-      },
-      {
-        "id": "Pd-08",
-        "network": "Wi-Fi+mbe-nwk",
-        "storage": "128GB",
-        "price": 17800,
-        "color": "銀色",
-        "picture": "iPd-Silver.png"
-      },
-      {
-        "id": "Pd-09",
-        "network": "Wi-Fi+mbe-nwk",
-        "storage": "128GB",
-        "price": 17800,
-        "color": "金色",
-        "picture": "iPd-Golden.png"
-      },
+    {
+      "id": "Pd-07",
+      "network": "Wi-Fi+mbe-nwk",
+      "storage": "128GB",
+      "price": 17800,
+      "color": "太空灰色",
+      "picture": "iPd-graphite.png"
+    },
+    {
+      "id": "Pd-08",
+      "network": "Wi-Fi+mbe-nwk",
+      "storage": "128GB",
+      "price": 17800,
+      "color": "銀色",
+      "picture": "iPd-Silver.png"
+    },
+    {
+      "id": "Pd-09",
+      "network": "Wi-Fi+mbe-nwk",
+      "storage": "128GB",
+      "price": 17800,
+      "color": "金色",
+      "picture": "iPd-Golden.png"
+    },
 
-      {
-        "id": "Pd-10",
-        "network": "Wi-Fi+mbe-nwk",
-        "storage": "32GB",
-        "price": 14800,
-        "color": "太空灰色",
-        "picture": "iPd-graphite.png"
-      },
-      {
-        "id": "Pd-11",
-        "network": "Wi-Fi+mbe-nwk",
-        "storage": "32GB",
-        "price": 14800,
-        "color": "銀色",
-        "picture": "iPd-Silver.png"
-      },
-      {
-        "id": "Pd-12",
-        "network": "Wi-Fi+mbe-nwk",
-        "storage": "32GB",
-        "price": 14800,
-        "color": "金色",
-        "picture": "iPd-Golden.png"
-      }
-    ]
-  },
-  {
-    "iMac": [
-      {
-        "id": "iMc-01",
-        "GPU": 7,
-        "storage": "256GB",
-        "price": 39900,
-        "color": "藍色",
-        "picture": "Mc-blue.png"
-      },
-      {
-        "id": "iMc-02",
-        "GPU": 7,
-        "storage": "256GB",
-        "price": 39900,
-        "color": "綠色",
-        "picture": "Mc-green.png"
-      },
-      {
-        "id": "iMc-03",
-        "GPU": 7,
-        "storage": "256GB",
-        "price": 39900,
-        "color": "粉色",
-        "picture": "Mc-pink.png"
-      },
-      {
-        "id": "iMc-04",
-        "GPU": 7,
-        "storage": "256GB",
-        "price": 39900,
-        "color": "銀色",
-        "picture": "Mc-Silver.png"
-      },
+    {
+      "id": "Pd-10",
+      "network": "Wi-Fi+mbe-nwk",
+      "storage": "32GB",
+      "price": 14800,
+      "color": "太空灰色",
+      "picture": "iPd-graphite.png"
+    },
+    {
+      "id": "Pd-11",
+      "network": "Wi-Fi+mbe-nwk",
+      "storage": "32GB",
+      "price": 14800,
+      "color": "銀色",
+      "picture": "iPd-Silver.png"
+    },
+    {
+      "id": "Pd-12",
+      "network": "Wi-Fi+mbe-nwk",
+      "storage": "32GB",
+      "price": 14800,
+      "color": "金色",
+      "picture": "iPd-Golden.png"
+    }
+  ],
+  "Mac": [
+    {
+      "id": "iMc-01",
+      "GPU": 7,
+      "storage": "256GB",
+      "price": 39900,
+      "color": "藍色",
+      "picture": "Mc-blue.png"
+    },
+    {
+      "id": "iMc-02",
+      "GPU": 7,
+      "storage": "256GB",
+      "price": 39900,
+      "color": "綠色",
+      "picture": "Mc-green.png"
+    },
+    {
+      "id": "iMc-03",
+      "GPU": 7,
+      "storage": "256GB",
+      "price": 39900,
+      "color": "粉色",
+      "picture": "Mc-pink.png"
+    },
+    {
+      "id": "iMc-04",
+      "GPU": 7,
+      "storage": "256GB",
+      "price": 39900,
+      "color": "銀色",
+      "picture": "Mc-Silver.png"
+    },
 
-      {
-        "id": "iMc-05",
-        "GPU": 8,
-        "storage": "256GB",
-        "price": 45900,
-        "color": "藍色",
-        "picture": "Mc-blue.png"
-      },
-      {
-        "id": "iMc-06",
-        "GPU": 8,
-        "storage": "256GB",
-        "price": 45900,
-        "color": "綠色",
-        "picture": "Mc-green.png"
-      },
-      {
-        "id": "iMc-07",
-        "GPU": 8,
-        "storage": "256GB",
-        "price": 45900,
-        "color": "粉色",
-        "picture": "Mc-pink.png"
-      },
-      {
-        "id": "iMc-08",
-        "GPU": 8,
-        "storage": "256GB",
-        "price": 45900,
-        "color": "銀色",
-        "picture": "Mc-Silver.png"
-      },
+    {
+      "id": "iMc-05",
+      "GPU": 8,
+      "storage": "256GB",
+      "price": 45900,
+      "color": "藍色",
+      "picture": "Mc-blue.png"
+    },
+    {
+      "id": "iMc-06",
+      "GPU": 8,
+      "storage": "256GB",
+      "price": 45900,
+      "color": "綠色",
+      "picture": "Mc-green.png"
+    },
+    {
+      "id": "iMc-07",
+      "GPU": 8,
+      "storage": "256GB",
+      "price": 45900,
+      "color": "粉色",
+      "picture": "Mc-pink.png"
+    },
+    {
+      "id": "iMc-08",
+      "GPU": 8,
+      "storage": "256GB",
+      "price": 45900,
+      "color": "銀色",
+      "picture": "Mc-Silver.png"
+    },
 
-      {
-        "id": "iMc-09",
-        "GPU": 8,
-        "storage": "512GB",
-        "price": 51900,
-        "color": "藍色",
-        "picture": "Mc-blue.png"
-      },
-      {
-        "id": "iMc-10",
-        "GPU": 8,
-        "storage": "512GB",
-        "price": 51900,
-        "color": "綠色",
-        "picture": "Mc-green.png"
-      },
-      {
-        "id": "iMc-11",
-        "GPU": 8,
-        "storage": "512GB",
-        "price": 51900,
-        "color": "粉色",
-        "picture": "Mc-pink.png"
-      },
-      {
-        "id": "iMc-12",
-        "GPU": 8,
-        "storage": "512GB",
-        "price": 51900,
-        "color": "銀色",
-        "picture": "Mc-Silver.png"
-      }
-    ]
-  }
-]
+    {
+      "id": "iMc-09",
+      "GPU": 8,
+      "storage": "512GB",
+      "price": 51900,
+      "color": "藍色",
+      "picture": "Mc-blue.png"
+    },
+    {
+      "id": "iMc-10",
+      "GPU": 8,
+      "storage": "512GB",
+      "price": 51900,
+      "color": "綠色",
+      "picture": "Mc-green.png"
+    },
+    {
+      "id": "iMc-11",
+      "GPU": 8,
+      "storage": "512GB",
+      "price": 51900,
+      "color": "粉色",
+      "picture": "Mc-pink.png"
+    },
+    {
+      "id": "iMc-12",
+      "GPU": 8,
+      "storage": "512GB",
+      "price": 51900,
+      "color": "銀色",
+      "picture": "Mc-Silver.png"
+    }
+  ]
+}
