@@ -55,20 +55,24 @@
       margin: 0 auto 1vw;
       border-radius: 50%;
     }
-    .col-12.col-md-4:nth-child(2) div {
-      background-color: #282621;
-    }
-    .col-12.col-md-4:nth-child(3) div {
-      background-color: #ddded9;
-    }
-    .col-12.col-md-4:nth-child(4) div {
-      background-color: #ebd8c1;
-    }
-    .col-12.col-md-4:nth-child(5) div {
-      background-color: #0b2c3c;
-    }
     .container .tfoot {
       font-size: 6vw;
+    }
+
+    .col-12.col-md-6 {
+      position: relative;
+    }
+    .col-12.col-md-6 img {
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
     }
   </style>
   <body>
@@ -107,10 +111,11 @@
       let msgl = document.getElementById("msgl");
       let itemB = document.getElementById("itemB");
       let itemF = document.getElementById("itemF");
+      let tFoot = document.getElementById("tFoot");
       window.onload = function () {
         document.querySelector("#i12").addEventListener("click", craI12);
-        // document.querySelector("#Pd").addEventListener("click", requestIpadJson);
-        // document.querySelector("#Mc").addEventListener("click", requestIpadJson);
+        document.querySelector("#Pd").addEventListener("click", craPd);
+        document.querySelector("#Mc").addEventListener("click", craMc);
       };
 
       let Array = [];
@@ -125,6 +130,15 @@
             (item) => item.model == "12ProMax"
           );
           let dColor = Array.iPhone.find((item) => item.price == 33900).spec;
+
+          msgR.innerHTML = "";
+          itemB.innerHTML = "";
+          itemF.innerHTML = "";
+          tFoot.innerHTML = "";
+          tfoot.innerHTML = "";
+          msgl.innerHTML = "";
+          document.querySelector("#Pd").disabled = false;
+          document.querySelector("#Mc").disabled = false;
 
           let tModel = document.createElement("h2");
           tModel.innerHTML = "型號";
@@ -151,8 +165,7 @@
                   `${item.storage}<br><br>NT$${item.price}` +
                   "</button>";
                 itemB.appendChild(box);
-                box
-                  .querySelector("#btn2")
+                box.querySelector("#btn2")
                   .addEventListener("click", function () {
                     tfoot.innerHTML = "<span>" + `NT$${item.price}` + "</span>";
                   });
@@ -170,12 +183,8 @@
                   "<button id='btn2'>" +
                   `${item.storage}<br><br>NT$${item.price}` +
                   "</button>";
-                box
-                  .querySelector("#btn2")
-                  .addEventListener("click", function () {});
                 itemB.appendChild(box);
-                box
-                  .querySelector("#btn2")
+                box.querySelector("#btn2")
                   .addEventListener("click", function () {
                     tfoot.innerHTML = "<span>" + `NT$${item.price}` + "</span>";
                   });
@@ -206,7 +215,7 @@
             box.setAttribute("class", "col-12 col-md-4");
             box.innerHTML =
               "<button id='btn3'>" +
-              "<div>" +
+              "<div id='color'>" +
               "</div>" +
               `${item.color}` +
               "</button>";
@@ -215,12 +224,18 @@
               img.src = `${item.picture}`;
             });
           });
+          for (i = 0; i < 4; i++) {
+            let box = ["#282621", "#ddded9", "#ebd8c1", "#0b2c3c"];
+            itemF.querySelectorAll("#color")[i].style 
+            = `background-color:${box[i]}`;
+
+            itemF.querySelectorAll("#btn3")[i].style = "margin:12px 0;";
+          }
 
           let img = document.createElement("img");
           img.src = "iPhone.png";
           msgl.appendChild(img);
 
-          let tFoot = document.getElementById("tFoot");
           let count = document.createElement("h2");
           count.innerHTML = "價格試算";
           tFoot.appendChild(count);
@@ -228,6 +243,250 @@
         xhr.open("GET", url);
         xhr.send();
         document.querySelector("#i12").disabled = true;
+      }
+
+      function craPd() {
+        xhr.onload = function () {
+          Array = JSON.parse(this.responseText);
+          let dWiFi = Array.iPad.filter((item) => item.storage == "32GB");
+          let dStorageL = Array.iPad.filter((item) => item.network == "Wi-Fi");
+          let dStorageR = Array.iPad.filter(
+            (item) => item.network == "Wi-Fi+mbe-nwk"
+          );
+          let dColor = Array.iPad.find((item) => item.price == 10500).spec;
+
+          msgR.innerHTML = "";
+          itemB.innerHTML = "";
+          itemF.innerHTML = "";
+          tFoot.innerHTML = "";
+          tfoot.innerHTML = "";
+          msgl.innerHTML = "";
+          document.querySelector("#i12").disabled = false;
+          document.querySelector("#Mc").disabled = false;
+
+          let tWiFi = document.createElement("h2");
+          tWiFi.innerHTML = "連線能力";
+          msgR.appendChild(tWiFi);
+          dWiFi.forEach((item, index) => {
+            box = document.createElement("div");
+            box.setAttribute("class", "col-12 col-md-6");
+            box.innerHTML =
+              "<button id='btn'>" +
+              `${item.network}<br><br>NT$${item.price}起` +
+              "</button>";
+            msgR.appendChild(box);
+          });
+
+          msgR
+            .querySelectorAll("#btn")[0]
+            .addEventListener("click", function () {
+              itemB.innerHTML = "";
+              dStorageL.forEach((item, index) => {
+                box = document.createElement("div");
+                box.setAttribute("class", "col-12 col-md-6");
+                box.innerHTML =
+                  "<button id='btn2'>" +
+                  `${item.storage}<br><br>NT$${item.price}` +
+                  "</button>";
+                itemB.appendChild(box);
+                box.querySelector("#btn2")
+                  .addEventListener("click", function () {
+                    tfoot.innerHTML = "<span>" + `NT$${item.price}` + "</span>";
+                  });
+              });
+            });
+
+          msgR
+            .querySelectorAll("#btn")[1]
+            .addEventListener("click", function () {
+              itemB.innerHTML = "";
+              dStorageR.forEach((item, index) => {
+                box = document.createElement("div");
+                box.setAttribute("class", "col-12 col-md-6");
+                box.innerHTML =
+                  "<button id='btn2'>" +
+                  `${item.storage}<br><br>NT$${item.price}` +
+                  "</button>";
+                itemB.appendChild(box);
+                box.querySelector("#btn2")
+                  .addEventListener("click", function () {
+                    tfoot.innerHTML = "<span>" + `NT$${item.price}` + "</span>";
+                  });
+              });
+            });
+
+          let tStorage = document.createElement("h2");
+          tStorage.innerHTML = "容量";
+          msgR.appendChild(tStorage);
+          dStorageL.forEach((item, index) => {
+            box = document.createElement("div");
+            box.setAttribute("class", "col-12 col-md-6");
+            box.innerHTML =
+              "<button id='btn2'>" +
+              `${item.storage}<br><br>NT$${item.price}` +
+              "</button>";
+            itemB.appendChild(box);
+            box.querySelector("#btn2").addEventListener("click", function () {
+              tfoot.innerHTML = "<span>" + `NT$${item.price}` + "</span>";
+            });
+          });
+
+          let tColor = document.createElement("h2");
+          tColor.innerHTML = "顏色";
+          itemF.appendChild(tColor);
+          dColor.forEach((item, index) => {
+            let box = document.createElement("div");
+            box.setAttribute("class", "col-12 col-md-4");
+            box.innerHTML =
+              "<button id='btn3'>" +
+              "<div id='color'>" +
+              "</div>" +
+              `${item.color}` +
+              "</button>";
+            itemF.appendChild(box);
+            box.querySelector("#btn3").addEventListener("click", function () {
+              img.src = `${item.picture}`;
+            });
+          });
+          for (i = 0; i < 3; i++) {
+            let box = ["#8F9095", "#ddded9", "#ebd8c1"];
+            itemF.querySelectorAll("#color")[i].style 
+            = `background-color:${box[i]}`;
+          }
+
+          let img = document.createElement("img");
+          img.src = "iPad.png";
+          msgl.appendChild(img);
+
+          let count = document.createElement("h2");
+          count.innerHTML = "價格試算";
+          tFoot.appendChild(count);
+        };
+        xhr.open("GET", url);
+        xhr.send();
+        document.querySelector("#Pd").disabled = true;
+      }
+
+      function craMc() {
+        xhr.onload = function () {
+          Array = JSON.parse(this.responseText);
+          let dGPU = Array.Mac.filter((item) => item.storage == "256GB");
+          let dStorageL = Array.Mac.filter((item) => item.GPU == 7);
+          let dStorageR = Array.Mac.filter((item) => item.GPU == 8);
+          let dColor = Array.Mac.find((item) => item.price == 39900).spec;
+
+          msgR.innerHTML = "";
+          itemB.innerHTML = "";
+          itemF.innerHTML = "";
+          tFoot.innerHTML = "";
+          tfoot.innerHTML = "";
+          msgl.innerHTML = "";
+          document.querySelector("#i12").disabled = false;
+          document.querySelector("#Pd").disabled = false;
+
+          let tGPU = document.createElement("h2");
+          tGPU.innerHTML = "核心GPU";
+          msgR.appendChild(tGPU);
+          dGPU.forEach((item, index) => {
+            box = document.createElement("div");
+            box.setAttribute("class", "col-12 col-md-6");
+            box.innerHTML =
+              "<button id='btn'>" +
+              `${item.GPU}核心<br><br>NT$${item.price}起` +
+              "</button>";
+            msgR.appendChild(box);
+          });
+
+          msgR
+            .querySelectorAll("#btn")[0]
+            .addEventListener("click", function () {
+              itemB.innerHTML = "";
+              dStorageL.forEach((item, index) => {
+                box = document.createElement("div");
+                box.setAttribute("class", "col-12 col-md-6");
+                box.innerHTML =
+                  "<button id='btn2'>" +
+                  `${item.storage}<br><br>NT$${item.price}` +
+                  "</button>";
+                itemB.appendChild(box);
+                box.querySelector("#btn2")
+                  .addEventListener("click", function () {
+                    tfoot.innerHTML = "<span>" + `NT$${item.price}` + "</span>";
+                  });
+              });
+            });
+
+          msgR
+            .querySelectorAll("#btn")[1]
+            .addEventListener("click", function () {
+              itemB.innerHTML = "";
+              dStorageR.forEach((item, index) => {
+                box = document.createElement("div");
+                box.setAttribute("class", "col-12 col-md-6");
+                box.innerHTML =
+                  "<button id='btn2'>" +
+                  `${item.storage}<br><br>NT$${item.price}` +
+                  "</button>";
+                itemB.appendChild(box);
+                box.querySelector("#btn2")
+                  .addEventListener("click", function () {
+                    tfoot.innerHTML = "<span>" + `NT$${item.price}` + "</span>";
+                  });
+              });
+            });
+
+          let tStorage = document.createElement("h2");
+          tStorage.innerHTML = "容量";
+          msgR.appendChild(tStorage);
+          dStorageL.forEach((item, index) => {
+            box = document.createElement("div");
+            box.setAttribute("class", "col-12 col-md-6");
+            box.innerHTML =
+              "<button id='btn2'>" +
+              `${item.storage}<br><br>NT$${item.price}` +
+              "</button>";
+            itemB.appendChild(box);
+            box.querySelector("#btn2").addEventListener("click", function () {
+              tfoot.innerHTML = "<span>" + `NT$${item.price}` + "</span>";
+            });
+
+            let tColor = document.createElement("h2");
+            tColor.innerHTML = "顏色";
+            itemF.appendChild(tColor);
+            dColor.forEach((item, index) => {
+              let box = document.createElement("div");
+              box.setAttribute("class", "col-12 col-md-4");
+              box.innerHTML =
+                "<button id='btn3'>" +
+                "<div id='color'>" +
+                "</div>" +
+                `${item.color}` +
+                "</button>";
+              itemF.appendChild(box);
+              box.querySelector("#btn3").addEventListener("click", function () {
+                img.src = `${item.picture}`;
+              });
+            });
+            for (i = 0; i < 4; i++) {
+              let box = ["#3E6795", "#4E99AA", "#CD94C4", "#ddded9"];
+              itemF.querySelectorAll("#color")[i].style 
+              = `background-color:${box[i]}`;
+
+              itemF.querySelectorAll("#btn3")[i].style = "margin:12px 0;";
+            }
+
+            let img = document.createElement("img");
+            img.src = "Mac.png";
+            msgl.appendChild(img);
+
+            let count = document.createElement("h2");
+            count.innerHTML = "價格試算";
+            tFoot.appendChild(count);
+          });
+        };
+        xhr.open("GET", url);
+        xhr.send();
+        document.querySelector("#Mc").disabled = true;
       }
     </script>
   </body>
