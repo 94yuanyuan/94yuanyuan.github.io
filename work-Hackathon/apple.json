@@ -35,8 +35,8 @@
     },
     {
       "model": "12ProMax",
-      "storage": "512GB",
-      "price": 48400,
+      "storage": "128GB",
+      "price": 37900,
       "spec": [
         { "color": "石墨色", "picture": "graphite.png" },
         { "color": "銀色", "picture": "Silver.png" },
@@ -57,8 +57,8 @@
     },
     {
       "model": "12ProMax",
-      "storage": "128GB",
-      "price": 37900,
+      "storage": "512GB",
+      "price": 48400,
       "spec": [
         { "color": "石墨色", "picture": "graphite.png" },
         { "color": "銀色", "picture": "Silver.png" },
@@ -90,8 +90,8 @@
     },
     {
       "network": "Wi-Fi+mbe-nwk",
-      "storage": "128GB",
-      "price": 17800,
+      "storage": "32GB",
+      "price": 14800,
       "spec": [
         { "color": "太空灰色", "picture": "iPd-graphite.png" },
         { "color": "銀色", "picture": "iPd-Silver.png" },
@@ -100,8 +100,8 @@
     },
     {
       "network": "Wi-Fi+mbe-nwk",
-      "storage": "32GB",
-      "price": 14800,
+      "storage": "128GB",
+      "price": 17800,
       "spec": [
         { "color": "太空灰色", "picture": "iPd-graphite.png" },
         { "color": "銀色", "picture": "iPd-Silver.png" },
@@ -111,102 +111,37 @@
   ],
   "Mac": [
     {
-      "id": "iMc-01",
       "GPU": 7,
       "storage": "256GB",
       "price": 39900,
-      "color": "藍色",
-      "picture": "Mc-blue.png"
+      "spec": [
+        { "color": "藍色", "picture": "Mc-blue.png" },
+        { "color": "綠色", "picture": "Mc-green.png" },
+        { "color": "粉色", "picture": "Mc-pink.png" },
+        { "color": "銀色", "picture": "Mc-Silver.png" }
+      ]
     },
     {
-      "id": "iMc-02",
-      "GPU": 7,
-      "storage": "256GB",
-      "price": 39900,
-      "color": "綠色",
-      "picture": "Mc-green.png"
-    },
-    {
-      "id": "iMc-03",
-      "GPU": 7,
-      "storage": "256GB",
-      "price": 39900,
-      "color": "粉色",
-      "picture": "Mc-pink.png"
-    },
-    {
-      "id": "iMc-04",
-      "GPU": 7,
-      "storage": "256GB",
-      "price": 39900,
-      "color": "銀色",
-      "picture": "Mc-Silver.png"
-    },
-
-    {
-      "id": "iMc-05",
       "GPU": 8,
       "storage": "256GB",
       "price": 45900,
-      "color": "藍色",
-      "picture": "Mc-blue.png"
+      "spec": [
+        { "color": "藍色", "picture": "Mc-blue.png" },
+        { "color": "綠色", "picture": "Mc-green.png" },
+        { "color": "粉色", "picture": "Mc-pink.png" },
+        { "color": "銀色", "picture": "Mc-Silver.png" }
+      ]
     },
     {
-      "id": "iMc-06",
-      "GPU": 8,
-      "storage": "256GB",
-      "price": 45900,
-      "color": "綠色",
-      "picture": "Mc-green.png"
-    },
-    {
-      "id": "iMc-07",
-      "GPU": 8,
-      "storage": "256GB",
-      "price": 45900,
-      "color": "粉色",
-      "picture": "Mc-pink.png"
-    },
-    {
-      "id": "iMc-08",
-      "GPU": 8,
-      "storage": "256GB",
-      "price": 45900,
-      "color": "銀色",
-      "picture": "Mc-Silver.png"
-    },
-
-    {
-      "id": "iMc-09",
       "GPU": 8,
       "storage": "512GB",
       "price": 51900,
-      "color": "藍色",
-      "picture": "Mc-blue.png"
-    },
-    {
-      "id": "iMc-10",
-      "GPU": 8,
-      "storage": "512GB",
-      "price": 51900,
-      "color": "綠色",
-      "picture": "Mc-green.png"
-    },
-    {
-      "id": "iMc-11",
-      "GPU": 8,
-      "storage": "512GB",
-      "price": 51900,
-      "color": "粉色",
-      "picture": "Mc-pink.png"
-    },
-    {
-      "id": "iMc-12",
-      "GPU": 8,
-      "storage": "512GB",
-      "price": 51900,
-      "color": "銀色",
-      "picture": "Mc-Silver.png"
+      "spec": [
+        { "color": "藍色", "picture": "Mc-blue.png" },
+        { "color": "綠色", "picture": "Mc-green.png" },
+        { "color": "粉色", "picture": "Mc-pink.png" },
+        { "color": "銀色", "picture": "Mc-Silver.png" }
+      ]
     }
   ]
 }
