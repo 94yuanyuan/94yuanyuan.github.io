@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>英雄蓮霧</title>
+    <link rel="icon" href="https://cdngarenanow-a.akamaihd.net/games/lol/tw/web/media/upload/icons/favicon.ico?version=20200212">
+    <link rel="stylesheet" href="Reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"
+      integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      body * {
+        font-family: lulo-clean-w01-one-bold, sans-serif;
+      }
+      .bg-dark {
+        border-radius: 0;
+        color: #bf975c;
+      }
+      .bg-dark h1 {
+        font-size: 36px;
+        line-height: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .bg-dark h1::after {
+        content: "League of Legends";
+        font-size: 12px;
+      }
+      .card {
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+        flex-grow: 1;
+        margin: 15px;
+        overflow: hidden;
+        position: relative;
+      }
+      .card:after {
+        border: 20px solid transparent;
+        border-top: 20px solid #fff;
+        content: "";
+        position: absolute;
+        right: -20px;
+      }
+      .card img {
+        border-radius: 0;
+      }
+      .headshot {
+        overflow: hidden;
+      }
+      .card-title {
+        color: white;
+        font-size: 25px;
+        font-weight: 700;
+        margin: auto;
+      }
+      .card-body {
+        background-color: #061c25;
+      }
+      .card:hover .card-body {
+        background-color: #006680 !important;
+        transition: 0.3s;
+      }
+
+      .card:hover:after {
+        transform: translate(10px, -10px);
+        transition: transform 0.5s;
+      }
+      .card:not(:hover):after {
+        transform: translate(0, 0);
+        transition: transform 0.3s;
+      }
+
+      .card:hover .card-title {
+        transform: translate(0, 12px);
+        transition: transform 0.5s;
+      }
+      .card:not(:hover) .card-title {
+        transform: translate(0, 0);
+        transition: transform 0.3s;
+      }
+
+      .card:hover img {
+        transform: scale(1.2);
+        transition: transform 0.5s;
+      }
+      .card:not(:hover) img {
+        transform: scale(1, 1);
+        transition: transform 0.3s;
+      }
+
+      .modal-content {
+        background-color: #101215;
+      }
+      .modal-title {
+        color: #fff;
+        font-size: 36px;
+      }
+      .close {
+        color: #d7a25e;
+      }
+      .modal-body img {
+        width: 100%;
+        height: 100%;
+      }
+      .modal-body h3,
+      .modal-body h2 {
+        display: flex;
+        justify-content: center;
+      }
+      .modal-body h3 {
+        color: #918f94;
+        font-size: 15px;
+        margin: 15px 0 0 0;
+      }
+      .modal-body h2 {
+        font-size: 52px;
+        font-weight: 700;
+      }
+      .modal-body .text-white {
+        text-align: center;
+      }
+      .modal-body .text-white ul {
+        line-height: 30px;
+        margin: 16px 0 0 0;
+        padding: 0 25px 0 0;
+        text-align: end;
+      }
+      .text-white {
+        margin: 0;
+      }
+      .row.border-top {
+        margin: 20px 0 0 0;
+      }
+      .row.border-top .col-md-6 {
+        margin: 0;
+        padding: 0;
+      }
+      .modal-header {
+        border-bottom: 1px solid #d7a25e;
+      }
+      .modal-footer {
+        border-top: 1px solid #d7a25e;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="jumbotron bg-dark">
+        <h1>英雄聯盟</h1>
+      </div>
+
+      <div class="row"></div>
+    </div>
+
+    <template id="LOLcard">
+      <div class="card" style="width: 18rem">
+        <img src="" class="card-img-top" alt="" />
+        <div class="card-body">
+          <h2 class="card-title"></h2>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </template>
+
+    <div
+      class="modal fade"
+      id="LOLModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="LOLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title" id="LOLabel">英雄</h1>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img id="LOLImg" />
+            <h3 class="modal-title" id="Titlelabel">稱號</h3>
+            <h2 class="modal-title" id="HeroName">英雄</h2>
+            <p id="description" class="text-white"></p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              取消
+            </button>
+            <button type="button" class="btn btn-success">購買英雄</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const url =
+        "https://raw.githubusercontent.com/94yuanyuan/94yuanyuan.github.io/main/work-js-3/LOL.json";
+      let LOLArray = [];
+      let xhr = new XMLHttpRequest();
+      xhr.onload = function () {
+        LOLArray = JSON.parse(this.responseText);
+        let row = document.getElementsByClassName("row")[0];
+        let card = document.getElementById("LOLcard");
+        // let data = Object.keys(LOLArray.data).map(
+        //   (x) => LOLArray.data[x].stats
+        // );
+        // console.log(Math.max(...data.map((x) => x.attackrange)));
+        Object.keys(LOLArray.data).forEach(function (item, index) {
+          let cloneContent = card.content.cloneNode(true);
+          cloneContent.querySelector("h2").innerText = LOLArray.data[item].name;
+          cloneContent.querySelector("img").src 
+          = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${item}_0.jpg`;
+          cloneContent.querySelector(".card").addEventListener("click", function () {
+              this.setAttribute("data-toggle", "modal");
+              this.setAttribute("data-target", "#LOLModal");
+              LOLModal(item, index);
+            });
+          row.appendChild(cloneContent);
+        });
+      };
+      xhr.open("GET", url);
+      xhr.send();
+      function LOLModal(item, index) {
+        let modal = document.getElementById("LOLModal");
+        modal.querySelector("#LOLabel").innerHTML = `${item}－${LOLArray.data[item].name}`;
+        modal.querySelector("#LOLImg").src = `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${item}_0.jpg`;
+        modal.querySelector("#Titlelabel").innerHTML = `${LOLArray.data[item].title}`;
+        modal.querySelector("#HeroName").innerHTML = `${LOLArray.data[item].name}`;
+        modal.querySelector("#description").innerHTML = `${LOLArray.data[item].blurb}
+            <div class="row border-top border-warning"><div class="col-12 col-md-6 text-warning"><ul>HP：${LOLArray.data[item].stats.hp}</br>MP：${LOLArray.data[item].stats.mp}</li>
+            <li>Armor：${LOLArray.data[item].stats.armor}</li>
+            <li>Spellblock：${LOLArray.data[item].stats.spellblock}</li>
+            <li>Attackdamage：${LOLArray.data[item].stats.attackdamage}</li>
+            <li>Attackspeed：${LOLArray.data[item].stats.attackspeed}</li>
+            <li>AttackRange：${LOLArray.data[item].stats.attackrange}</li></div>
+            <div class="col-12 col-md-6"><canvas id="myChart" width="400" height="400"></canvas></div></div>`;
+
+        var ctx = document.getElementById("myChart");
+        var myChart = new Chart(ctx, {
+          type: "radar",
+          data: {
+            labels: ["HP", "MP", "Armor", "Spellblock", "Adam", "Aspd", "Arng"],
+            datasets: [
+              {
+                label: "能力分布(%)",
+                data: [
+                  `${LOLArray.data[item].stats.hp / 6.2564}`,
+                  `${LOLArray.data[item].stats.mp / 5}`,
+                  `${LOLArray.data[item].stats.armor * 2.127659574468085}`,
+                  `${LOLArray.data[item].stats.spellblock * 2.564102564102564}`,
+                  `${
+                    LOLArray.data[item].stats.attackdamage * 1.428571428571429
+                  }`,
+                  `${LOLArray.data[item].stats.attackspeed * 125}`,
+                  `${LOLArray.data[item].stats.attackrange / 6.5}`,
+                ],
+                backgroundColor: "#ffc10730",
+                borderColor: "#ffc107",
+                pointBackgroundColor: "#ffc107",
+                pointBorderColor: "#fff",
+                pointHoverBackgroundColor: "#fff",
+                pointHoverBorderColor: "#ffc107",
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              r: {
+                beginAtZero: true,
+                ticks: {
+                  font: {},
+                  color: "black",
+                  maxTicksLimit: 2,
+                },
+                pointLabels: {
+                  font: {
+                    size: 16,
+                  },
+                  color: "#ffc107",
+                },
+                angleLines: {
+                  color: "#d7a25e",
+                },
+                grid: {
+                  color: "#d7a25e",
+                },
+              },
+            },
+            plugins: {
+              legend: {
+                display: false,
+              },
+              tooltip: {
+                displayColors: false,
+              },
+            },
+          },
+        });
+      }
+    </script>
+  </body>
+</html>
