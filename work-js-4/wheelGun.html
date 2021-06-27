@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--BS-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <style>
+      html {
+        overflow: hidden;
+      }
+      .clip {
+        width: 32vw;
+        height: 32vw;
+        border: 1vw solid;
+        border-radius: 50%;
+        background-color: dimgray;
+        margin: auto;
+        transform: rotate(90deg);
+        box-shadow: rgba(0, 0, 0, 0.7) 0.1vw 0.1vw 10vw 0 inset;
+      }
+      .result {
+        width: 25vw;
+        margin: auto;
+      }
+      .result .btn {
+        font-size: 2vw;
+      }
+      .row {
+        display: flex;
+        flex-grow: 1;
+        height: 10vw;
+        justify-content: center;
+      }
+
+      [box-id] {
+        box-shadow: rgba(0, 0, 0, 0.7) 0.3vw 0.3vw 1vw 0 inset;
+        background-color: transparent;
+        border: solid 0.2vw;
+        border-radius: 50%;
+        height: 5.25vw;
+      }
+      [box-id].active {
+        border: solid 0.4vw firebrick;
+        box-shadow: 0 0 2vw firebrick;
+        transition: 0s;
+      }
+      #msg {
+        font-size: 3vw;
+        text-align: center;
+      }
+      .row:nth-child(1) [box-id] {
+        margin-top: auto;
+      }
+      .row:nth-child(2) [box-id] {
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clip">
+      <div class="row">
+        <div box-id="2" class="col-2 p-0"></div>
+        <div class="col-2 p-0"></div>
+        <div box-id="3" class="col-2 p-0"></div>
+      </div>
+      <div class="row">
+        <div box-id="1" class="col-2 p-0"></div>
+        <div class="col-2 p-0"></div>
+        <div box-id="4" class="col-2 p-0"></div>
+      </div>
+      <div class="row">
+        <div box-id="6" class="col-2 p-0"></div>
+        <div class="col-2 p-0"></div>
+        <div box-id="5" class="col-2 p-0"></div>
+      </div>
+    </div>
+    <!--button-->
+    <div class="result">
+      <button class="btn btn-primary w-100">刷首抽</button>
+    </div>
+    <p id="msg"></p>
+    <script>
+      let bricksData = [
+        { id: 1 },
+        { id: 2 },
+        { id: 3 },
+        { id: 4 },
+        { id: 5 },
+        { id: 6 },
+      ];
+
+      //畫面
+      let bricks = document.querySelectorAll("[box-id]");
+      bricks = Array.from(bricks).sort((a, b) => {
+        return (
+          a.getAttributeNode("box-id").value -
+          b.getAttributeNode("box-id").value
+        );
+      });
+
+      //設定全域變數
+      let steps = 0; //剩餘要走的步數
+      let allSteps = 0; //全部的步數
+      let current = 0; //目前走到哪一格
+      let speed; //速率(越大代表走越慢)
+      //點擊開始按鈕事件
+      document.querySelector("button").addEventListener("click", function () {
+        msgBox.innerHTML = "";
+        speed = 50;
+        let random = Math.floor(Math.random() * bricksData.length) + 1;
+        let randomTwo = Math.floor(Math.random() * bricksData.length);
+        //random 0~5
+        bricksData[randomTwo].text = "恭喜";
+        bricksData[randomTwo].color = "goldenrod";
+        bricksData[randomTwo].shadow =
+          "rgba(165, 125, 25, 0.7) 0.3vw 0.3vw 1vw 0 inset";
+        for (let i = 0; i < 6; i++) {
+          if (i === randomTwo) continue;
+          bricksData[i].text = "沒成功";
+          bricksData[i].color = "transparent";
+          bricksData[i].shadow = "rgba(0, 0, 0, 0.7) 0.3vw 0.3vw 1vw 0 inset";
+        }
+        steps = random + 2 * bricks.length;
+        allSteps = steps;
+        bricks.forEach((x, index) => {
+          let id = index + 1;
+          let data = bricksData.find((x) => x.id == id);
+          x.style.backgroundColor = data.color;
+          x.style.boxShadow = data.shadow;
+        });
+        turnAround();
+      });
+
+      let msgBox = document.querySelector("#msg");
+      function turnAround() {
+        bricks[current].classList.remove("active");
+        current++;
+        if (current >= bricks.length) current = 0;
+        bricks[current].classList.add("active");
+        steps--;
+        if (steps > 0) {
+          //還沒走完
+          setTimeout(turnAround, speed);
+          //加入變速,剩餘步數剩下1/3時,減速度
+          if (steps < Math.floor(allSteps / 3)) speed += 100;
+        } else {
+          //走完了
+          let val = bricksData[current].text;
+          msgBox.innerText = `${val}`;
+        }
+      }
+    </script>
+  </body>
+</html>
