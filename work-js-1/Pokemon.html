@@ -11,19 +11,182 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="Reset.css" />
   </head>
+  <style>
+    body * {
+      font-family: lulo-clean-w01-one-bold, sans-serif;
+    }
+    body {
+      background-image: url(list_bg.jpg);
+    }
+    .jumbotron {
+      background-color: #ffec02;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 6vw 0 5vw;
+    }
+    .jumbotron h1 {
+      font-size: 2vw;
+      font-weight: 700;
+      text-align: center;
+      margin: 1vw 0 0 0;
+    }
+    .jumbotron img {
+      width: 10vw;
+    }
+    .guide {
+      width: 90vw;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      margin: auto;
+    }
+    .guide .btn {
+      margin: 0 0.5vw;
+      font-weight: 700;
+    }
+
+    .canvas {
+      background-color: #ffec02;
+      width: 30vw;
+      height: 15vw;
+      margin: auto;
+    }
+    .on {
+      height: 9vw;
+      display: flex;
+    }
+    .eyeL,
+    .eyeR {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .under {
+      height: 6vw;
+      display: flex;
+    }
+    .cheekL,
+    .cheekR {
+      width: 17%;
+      display: flex;
+      align-items: center;
+    }
+    .cheekL {
+      justify-content: flex-end;
+    }
+    .nose {
+      width: 66%;
+    }
+
+    .eyeL div,
+    .eyeR div {
+      background-color: black;
+      border-radius: 50%;
+      width: 4.5vw;
+      height: 4.5vw;
+      position: relative;
+    }
+    .eyeL ._div,
+    .eyeR ._div {
+      background-color: blanchedalmond;
+      width: 1.5vw;
+      height: 1.5vw;
+      position: absolute;
+      top: 0.5vw;
+      left: 0.5vw;
+    }
+
+    .cheekL div,
+    .cheekR div {
+      background-color: #fa6b4b;
+      border-radius: 50%;
+      width: 3.5vw;
+      height: 3.5vw;
+    }
+
+    ._on {
+      height: 40%;
+      overflow: hidden;
+    }
+    ._under {
+      display: flex;
+    }
+    ._on div {
+      width: 1.5vw;
+      height: 1.5vw;
+      background-color: black;
+      border-radius: 50%;
+      margin: -0.7vw auto;
+    }
+    ._under div {
+      width: 2vw;
+      height: 2vw;
+    }
+    ._under div:nth-child(1) {
+      margin-left: 6.05vw;
+    }
+    ._under div:nth-child(3) {
+      margin-left: -0.1vw;
+    }
+    ._under div:nth-child(2),
+    ._under div:nth-child(4) {
+      margin-left: -0.1vw;
+    }
+    ._under div:nth-child(1),
+    ._under div:nth-child(3) {
+      border-bottom-right-radius: 100%;
+      border-right: 0.25vw solid black;
+      transform: rotate(0.25turn);
+    }
+    ._under div:nth-child(2),
+    ._under div:nth-child(4) {
+      border-bottom-left-radius: 100%;
+      border-left: 0.25vw solid black;
+      transform: rotate(0.75turn);
+    }
+  </style>
   <body>
     <div class="jumbotron">
-      <h1>寶可夢圖鑑列表</h1>
+      <div class="canvas">
+        <div class="on">
+          <div class="eyeL">
+            <div><div class="_div"></div></div>
+          </div>
+          <div class="eyeR">
+            <div><div class="_div"></div></div>
+          </div>
+        </div>
+        <div class="under">
+          <div class="cheekL"><div></div></div>
+          <div class="nose">
+            <div class="_on"><div></div></div>
+            <div class="_under">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="cheekR"><div></div></div>
+        </div>
+      </div>
+      <div class="logo">
+        <h1>寶可夢圖鑑列表</h1>
+      </div>
     </div>
-    <button class="btn btn-success" onclick="fetchPokemon()">
-      載入寶可夢圖鑑列表
-    </button>
-    <button class="btn btn-success" onclick="fetchPokemon_appendChild()">
-      載入寶可夢圖鑑列表appendChild()
-    </button>
-    <button class="btn btn-primary" id="button3">AddPokemon</button>
-    <button class="btn btn-primary" id="buttonR">重置</button>
+    <div class="guide">
+      <button class="btn btn-warning" id="addAll">全部顯示</button>
+      <button class="btn btn-primary" id="addOne">增加</button>
+      <button class="btn btn-primary" id="removeOne">減少</button>
+      <button class="btn btn-info" id="buttonR">重置</button>
+      <button class="btn btn-success" id="byStep">逐步增加</button>
+      <button class="btn btn-danger" id="stop">停止</button>
+    </div>
 
     <div id="container"></div>
     <script
@@ -87,20 +250,70 @@
       //     container.appendChild(img);
       //   }
       // }
-
-      let btn3 = document.getElementById("button3");
-      btn3.onclick = function (event) {
-        for (let i = 1; i <= 898; i++) {
-          let fileName = i.toString().padStart(3, "0");
+      let Token = 0;
+      let addAll = document.getElementById("addAll");
+      addAll.onclick = function (event) {
+        if (Token < 898) {
+          for (let i = `${Token + 1}`; i <= 898; i++) {
+            let fileName = i.toString().padStart(3, "0");
+            let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+            let img = document.createElement("img");
+            img.setAttribute("id", `${i}`);
+            img.setAttribute("src", pathFile);
+            container.appendChild(img);
+          }
+        }
+        Token = 898;
+      };
+      let addOne = document.getElementById("addOne");
+      addOne.onclick = function (event) {
+        if (Token < 898) {
+          Token += 1;
+          let fileName = Token.toString().padStart(3, "0");
           let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
           let img = document.createElement("img");
+          img.setAttribute("id", `${Token}`);
           img.setAttribute("src", pathFile);
           container.appendChild(img);
         }
       };
+      let removeOne = document.getElementById("removeOne");
+      removeOne.onclick = function (event) {
+        if (Token > 0) {
+          let imgR = document.getElementById(`${Token}`);
+          container.removeChild(imgR);
+          Token -= 1;
+        }
+      };
       let btnR = document.getElementById("buttonR");
       btnR.onclick = function (event) {
+        Token = 0;
         container.innerHTML = "";
+      };
+      let byStep = document.getElementById("byStep");
+      byStep.onclick = function (event) {
+        let id = setInterval(() => {
+          _byStep();
+        }, 150);
+
+        function _byStep() {
+          Token++;
+          if (Token <= 898) {
+            let fileName = Token.toString().padStart(3, "0");
+            let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+            let img = document.createElement("img");
+            img.setAttribute("id", `${Token}`);
+            img.setAttribute("src", pathFile);
+            container.appendChild(img);
+          } else {
+            Token--;
+            clearInterval(id);
+          }
+        }
+        let stop = document.getElementById("stop");
+        stop.onclick = function (event) {
+          clearInterval(id);
+        };
       };
     </script>
   </body>
