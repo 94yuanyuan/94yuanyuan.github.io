@@ -1,0 +1,380 @@
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="Reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body * {
+        font-family: "Noto Sans TC", sans-serif;
+      }
+      h1 {
+        text-align: center;
+        font-size: 5vw;
+        color: #fff;
+        letter-spacing: 1vw;
+        font-style: italic;
+        font-family: "ZCOOL QingKe HuangYou", cursive;
+      }
+      .modal-body .w-100 {
+        border: solid 1px #aaa;
+        border-radius: 5px;
+      }
+      .modal-body .w-100:nth-child(2) {
+        height: 128px;
+      }
+      td {
+        width: 5vw;
+        height: 5vw;
+        font-size: 1.25vw;
+        overflow: auto;
+      }
+      td::-webkit-scrollbar {
+        background: #aaa;
+        border-radius: 5vw;
+        width: 0.5vw;
+      }
+      .BOX {
+        width: 50vw;
+        margin: auto;
+        position: relative;
+        top: 3.5vw;
+      }
+      .table-borderless {
+        margin: auto;
+      }
+      th {
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.5vw;
+        padding: 0 0 4vw 0;
+      }
+      th:nth-child(1),
+      th:nth-child(7) {
+        color: red;
+      }
+      tr {
+        text-align: center;
+      }
+      li {
+        font-size: 1vw;
+        padding: 0.5vw 0;
+      }
+      li:nth-child(odd) {
+        text-align: left;
+      }
+      li:nth-child(even) {
+        text-align: right;
+      }
+      .toLeft,
+      .toRight {
+        position: absolute;
+        border: none;
+        background-color: transparent;
+        width: 7.46vw;
+      }
+      .ToLeft:focus,
+      .toRight:focus {
+        outline: none;
+      }
+      .ToLeft:active,
+      .toRight:active {
+        opacity: 0.6;
+      }
+      .ToLeft,
+      .toRight {
+        top: 0;
+        bottom: 0;
+        font-size: 4vw;
+        padding: 0;
+      }
+      .ToLeft {
+        left: 0;
+      }
+      .toRight {
+        right: 0;
+      }
+      #todo-item {
+        margin: 0 0 0.5vw 0;
+      }
+      td:hover {
+        background-color: #ccc;
+      }
+      .Kanban {
+        height: 15vw;
+        line-height: 15vw;
+        background-image: url("https://picsum.photos/1920/300/?random=1");
+        background-size: cover;
+      }
+      .modal-title {
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Kanban" id="exchange"><h1 id="year-month"></h1></div>
+    <div class="BOX">
+      <table class="table-borderless">
+        <thead>
+          <tr>
+            <th>日</th>
+            <th>一</th>
+            <th>二</th>
+            <th>三</th>
+            <th>四</th>
+            <th>五</th>
+            <th>六</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button type="button" class="ToLeft" onclick="MinMonth()">❰</button>
+      <button type="button" class="toRight" onclick="AddMonth()">❱</button>
+    </div>
+
+    <!-- Modal Add -->
+    <div
+      class="modal fade"
+      id="inputModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="inputModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="modal-title" id="inputModalLabel"></span>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div id="input-area" class="modal-body">
+            <input
+              class="w-100"
+              id="todo-item"
+              type="text"
+              placeholder="標題(8字元)"
+              maxlength="8"
+            />
+            <textarea
+              id="Details"
+              class="w-100"
+              placeholder="說明..."
+            ></textarea>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              取消
+            </button>
+            <button id="judgment" type="button" class="btn btn-primary">
+              儲存
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      //今天
+      let today = new Date(); //拿今天日期
+      //年月日
+      let year = today.getFullYear();
+      let month = today.getMonth();
+      let date = today.getDate();
+
+      function Init() {
+        let tbody = document.getElementsByTagName("tbody")[0];
+        tbody.innerHTML = "";
+        document.getElementById("year-month").innerHTML = `${new Date(
+          year,
+          month,
+          1
+        ).getFullYear()}年${new Date(year, month, 1).getMonth() + 1}月`;
+        let firstDay = new Date(year, month, 1).getDay();
+        let dayOfMonth = new Date(year, month + 1, 0).getDate();
+        let day = 1;
+        let rows = Math.ceil((dayOfMonth + firstDay) / 7);
+        let todoList = [];
+        for (let row = 0; row < rows; row++) {
+          let tr = document.createElement("tr");
+          for (let col = 0; col < 7; col++) {
+            let td = document.createElement("td");
+            if (row == 0 && col < firstDay) {
+            } else {
+              if (day <= dayOfMonth) {
+                td.innerHTML = day;
+                if (
+                  localStorage.getItem(`${year}-${month + 1}-${day}`) != null
+                ) {
+                  let ul = document.createElement("ul");
+                  todoList = JSON.parse(
+                    localStorage.getItem(`${year}-${month + 1}-${day}`)
+                  );
+                  todoList.forEach((item, index) => {
+                    let li = document.createElement("li");
+                    li.setAttribute("data-id", index);
+                    li.innerHTML = item.title;
+                    ul.appendChild(li);
+                  });
+                  td.appendChild(ul);
+                }
+                td.addEventListener("click", function (e) {
+                  let todoItem = document.getElementById("todo-item");
+                  let Details = document.getElementById("Details");
+                  let inputItem = document.getElementById("Details");
+                  let target;
+                  let jud = document.getElementById("judgment");
+                  if (e.target.localName == "li") {
+                    //e.target是li
+                    target = e.target.offsetParent; //拿td
+                    let id = e.target.getAttribute("data-id"); //拿li的屬性的質
+                    document
+                      .getElementById("inputModalLabel")
+                      .setAttribute("data-id", id);
+
+                    jud.innerText = "修改";
+                    jud.setAttribute("class", "btn btn-success");
+                    jud.addEventListener("click", EditTodoItem);
+                    jud.removeEventListener("click", SaveTodoItem);
+
+                    let targetobj = todoList.filter(
+                      //找index與id一樣的第一筆資料
+                      (x, index) => index == id
+                    )[0];
+                    todoItem.value = targetobj.title;
+                    Details.value = targetobj.input;
+                  } else if (e.target.localName == "ul") {
+                    target = e.target.offsetParent;
+                  } else {
+                    todoItem.value = "";
+                    Details.value = "";
+                    target = e.target;
+                    jud.innerText = "儲存";
+                    jud.setAttribute("class", "btn btn-primary");
+                    jud.addEventListener("click", SaveTodoItem);
+                    jud.removeEventListener("click", EditTodoItem);
+                  }
+                  $("#inputModal").modal("show");
+                  document.getElementById(
+                    "inputModalLabel"
+                  ).innerText = `${year}-${month + 1}-${
+                    target.childNodes[0].data
+                  }`;
+                });
+              } else {
+                //下個月
+              }
+              day++;
+            }
+            tr.appendChild(td);
+          }
+          tbody.appendChild(tr);
+        }
+      }
+      Init();
+
+      function SaveTodoItem() {
+        let date = document.getElementById("inputModalLabel").innerText;
+        let todoItem = document.getElementById("todo-item").value;
+        let Details = document.getElementById("Details").value;
+        let todoObj = { title: todoItem, input: Details };
+        let todoList = [];
+        if (localStorage.getItem(date) == null) {
+          todoList.push(todoObj);
+        } else {
+          todoList = JSON.parse(localStorage.getItem(date));
+          todoList.push(todoObj);
+        }
+        localStorage.setItem(date, JSON.stringify(todoList));
+        Init();
+      }
+
+      function EditTodoItem() {
+        let date = document.getElementById("inputModalLabel");
+        let todoItem = document.getElementById("todo-item");
+        let dateId = date.getAttribute("data-id");
+        let list = JSON.parse(localStorage.getItem(date.innerText));
+        let Details = document.getElementById("Details");
+        console.log(Details.innerText);
+        list.map((item, index) => {
+          if (index == dateId) {
+            item.title = todoItem.value;
+            item.input = Details.value;
+          }
+          return { title: item.title, input: item.input };
+        });
+        localStorage.setItem(date.innerText, JSON.stringify(list));
+        Init();
+      }
+
+      let number = 1;
+      function AddMonth() {
+        month++;
+        number++;
+        let exchange = document.getElementById("exchange");
+        exchange.style.backgroundImage = `url(https://picsum.photos/1920/300/?random=${number})`;
+        Init();
+      }
+      function MinMonth() {
+        month--;
+        if (number > 1) {
+          number--;
+          let exchange = document.getElementById("exchange");
+          exchange.style.backgroundImage = `url(https://picsum.photos/1920/300/?random=${number})`;
+        }
+        Init();
+      }
+    </script>
+  </body>
+</html>
