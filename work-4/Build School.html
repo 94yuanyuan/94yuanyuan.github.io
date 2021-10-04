@@ -14,647 +14,9 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <title>Hello, world!</title>
+    <link rel="stylesheet" href="Build School.css" />
+    <title>Build School</title>
   </head>
-  <style>
-    body * {
-      /* outline: 1px solid rebeccapurple; */
-      font-family: lulo-clean-w01-one-bold, sans-serif;
-    }
-    body * {
-      text-decoration: none;
-    }
-    .box {
-      position: relative;
-    }
-    .navbar-brand {
-      font-size: 30px;
-      display: flex;
-      line-height: 59px;
-      margin: 0;
-    }
-    .supTxt {
-      font-size: 12px;
-      width: 130px;
-      margin-left: -4px;
-      position: absolute;
-      bottom: 0;
-      left: 104.6px;
-      color: #000;
-    }
-    .nav-item a {
-      font-size: 13px;
-    }
-    .navbar-brand::before {
-      content: "";
-      width: 54px;
-      height: 59px;
-      background-image: url(Logo.png);
-      background-size: cover;
-      margin: 0 10px 0 0;
-    }
-    .col-12.col-md-6 {
-      margin: 50px 0;
-    }
-
-    .col-12.col-md-6 .item-1-h2,
-    .col-12.col-md-6 .item-1-h3 {
-      line-height: 2em;
-      font-weight: 700;
-    }
-    .col-12.col-md-6 .item-1-h2 {
-      font-size: 30px;
-      color: #3d3d3d;
-      text-align: center;
-    }
-    .col-12.col-md-6 .item-1-h3 {
-      font-size: 26px;
-      text-align: center;
-    }
-    .col-12.col-md-6 h4 {
-      font-size: 18px;
-      line-height: 1.5em;
-    }
-    .col-12.col-md-6 .item-1-p {
-      font-size: 20px;
-      font-weight: 700;
-      margin: 0;
-      text-align: center;
-    }
-    .col-12.col-md-6 p {
-      font-size: 17px;
-      line-height: 1.2em;
-      margin: 20px 0;
-    }
-    .a {
-      width: 76px;
-      height: 49px;
-      border: 6px solid;
-      margin: auto;
-      box-shadow: 0 3px 3px 3px rgb(0, 0, 0, 0.1);
-      position: relative;
-    }
-    .b {
-      width: 0;
-      height: 0;
-      border-top: 12px solid;
-      border-left: 12px solid transparent;
-      border-right: 12px solid transparent;
-      position: absolute;
-      bottom: -16px;
-    }
-    .c {
-      border-bottom: 6px solid;
-      width: 40px;
-      color: #f50038;
-      transform: rotate(138deg);
-      position: relative;
-      bottom: 40px;
-      left: 0;
-      right: 0;
-      top: -27px;
-      margin: auto;
-    }
-    .col-12.col-md-6 img {
-      width: 107px;
-      height: 109px;
-      display: flex;
-      margin-left: auto;
-      margin-right: auto;
-      margin: 0 auto 5px auto;
-    }
-
-    .city h2 {
-      font-size: 0;
-    }
-    .city::before {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      line-height: 2em;
-      height: 63px;
-      font-size: 12px;
-      font-weight: 700;
-      color: #fff;
-      background-color: rgba(4, 81, 132, 0.9);
-      margin: 110px 0 0 0;
-    }
-    .city:nth-child(1).city::before {
-      content: "18 - 24週的實作及作品開發 - 從訓練、就業、到企業連結";
-    }
-    .city:nth-child(3).city::before {
-      content: "在課程及作品實作中，將採用這些工具 - 熟悉實務上軟體開發團隊的運作、分工及真實專案的流程";
-    }
-    .city:nth-child(5).city::before {
-      content: "我們的講師及企業導師擁有在這些公司的工作經歷、擔任主管或資深工程師";
-    }
-    .city {
-      background-image: url(ct.png);
-      background-size: cover;
-    }
-
-    .row {
-      text-align: justify;
-    }
-    .message-1 img {
-      display: flex;
-      margin: auto;
-    }
-    .message-1 div {
-      height: 110px;
-      margin: 50px 0 25px 0;
-    }
-    .message-1 .A {
-      margin: 40px 0 35px 0;
-    }
-    .m {
-      width: 94px;
-      height: 76px;
-    }
-    .m2 {
-      width: 42px;
-      height: 84px;
-    }
-    .m3 {
-      width: 75px;
-      height: 90px;
-    }
-    .m4 {
-      width: 110px;
-      height: 110px;
-    }
-    .message-1 p,
-    .message-1 h3 {
-      text-align: center;
-      font-size: 18px;
-      font-weight: 700;
-    }
-    .message-1 p {
-      margin: 50px 0 0 0;
-    }
-    .message-1 h3 {
-      color: #f50038;
-      margin: 0 0 25px 0;
-    }
-    .message-1 ul {
-      font-size: 16px;
-      line-height: 1.4em;
-      margin-left: 15%;
-      margin-right: 15%;
-    }
-    .message-1 li {
-      list-style: disc;
-    }
-    .col-12.col-md-6 h4 {
-      margin-left: 15%;
-      margin-right: 15%;
-    }
-
-    .message-2 img {
-      display: flex;
-      margin: 0 auto 25px;
-    }
-    .message-2 div {
-      margin: 50px 0 25px 0;
-    }
-    .towM {
-      width: 140px;
-      height: 58px;
-    }
-    .towM2 {
-      width: 120px;
-      height: 99px;
-    }
-    .towM3 {
-      width: 141px;
-      height: 73px;
-    }
-    .towM4 {
-      width: 140px;
-      height: 44px;
-    }
-    .towM5 {
-      width: 176px;
-      height: 51px;
-    }
-    .towM6 {
-      width: 55px;
-      height: 73px;
-    }
-    .towM7 {
-      width: 210px;
-      height: 51px;
-    }
-    .towM8 {
-      width: 160px;
-      height: 73px;
-    }
-    .message-2 h3 {
-      text-align: center;
-      font-size: 18px;
-      font-weight: 700;
-      margin: 25px 0;
-    }
-    .message-2 ul {
-      font-size: 16px;
-      line-height: 1.4em;
-      margin-left: 15%;
-      margin-right: 15%;
-    }
-    .message-2 li {
-      list-style: disc;
-    }
-
-    .message-3 img {
-      display: flex;
-      margin: 20px auto;
-    }
-    .threeM {
-      width: calc(184px * 0.6);
-      height: calc(53px * 0.6);
-    }
-    .threeM2 {
-      width: calc(159px * 0.6);
-      height: calc(53px * 0.6);
-    }
-    .threeM3 {
-      width: calc(187px * 0.6);
-      height: calc(64px * 0.6);
-    }
-    .threeM4 {
-      width: calc(180px * 0.6);
-      height: calc(61px * 0.6);
-    }
-    .threeM5 {
-      width: calc(159px * 0.6);
-      height: calc(50px * 0.6);
-    }
-    .threeM6 {
-      width: calc(105px * 0.6);
-      height: calc(70px * 0.6);
-    }
-    .threeM7 {
-      width: calc(163px * 0.6);
-      height: calc(45px * 0.6);
-    }
-    .threeM8 {
-      width: calc(123px * 0.6);
-      height: calc(70px * 0.6);
-    }
-
-    .swiper-container {
-      width: 100%;
-      height: 100%;
-    }
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-    }
-    .swiper-slide {
-      height: 50vw;
-      background-size: cover;
-      flex-direction: column;
-      font-weight: 700;
-      color: #ffffff;
-      line-height: normal;
-    }
-    .swiper-slide h2 {
-      font-size: 2.45vw;
-    }
-    .swiper-slide h3 {
-      font-size: 1.2vw;
-    }
-    .swiper-wrapper .swiper-slide:nth-child(1) {
-      background-image: url(titleM.png);
-    }
-    .swiper-wrapper .swiper-slide:nth-child(2) {
-      background-image: url(titleM2.png);
-    }
-    .swiper-wrapper .swiper-slide:nth-child(3) {
-      background-image: url(titleM3.png);
-    }
-    .swiper-wrapper .swiper-slide:nth-child(3) h3 {
-      background-color: rgba(4, 81, 132, 0.6);
-      padding: 0.25vw 1.5vw;
-    }
-    .swiper-wrapper .swiper-slide:nth-child(4) {
-      background-image: url(titleM4.png);
-    }
-    .swiper-wrapper .swiper-slide:nth-child(4) h2 {
-      padding: 0 2.5vw;
-      background-color: rgba(4, 81, 132, 0.6);
-    }
-    .swiper-wrapper .swiper-slide:nth-child(5) {
-      background-image: url(titleM5.png);
-    }
-    .swiper-wrapper .swiper-slide:nth-child(5) h2 {
-      background-color: rgba(4, 81, 132, 0.6);
-      padding: 0 2.5vw;
-    }
-    .swiper-wrapper .swiper-slide:nth-child(6) {
-      background-image: url(titleM6.png);
-    }
-    .swiper-wrapper .swiper-slide:nth-child(6) h2 {
-      font-size: 6.1vw;
-    }
-    .swiper-wrapper .swiper-slide:nth-child(6) h3 {
-      font-size: 1.59vw;
-    }
-    .swiper-wrapper .swiper-slide:nth-child(7) {
-      background-image: url(titleM7.png);
-    }
-    .swiper-wrapper .swiper-slide:nth-child(7) h3 {
-      padding: 0 1.5vw;
-      background-color: rgba(4, 81, 132, 0.6);
-    }
-    .swiper-wrapper .swiper-slide:nth-child(8) {
-      background-image: url(titleM8.png);
-    }
-    .swiper-wrapper .swiper-slide:nth-child(8) h2 {
-      font-size: 6.1vw;
-    }
-    .swiper-wrapper .swiper-slide:nth-child(8) h3 {
-      font-size: 1.59vw;
-      padding: 0 1.5vw;
-    }
-
-    .swiper-slide .btn {
-      font-size: 1.1vw;
-      margin-top: 20vw;
-    }
-    .swiper-slide .btn a {
-      color: #ffffff;
-      background-color: rgba(61, 155, 233, 0.6);
-      padding: 1vw;
-      margin: 0 2vw;
-    }
-
-    .foot::before {
-      content: "";
-      display: block;
-      border-top: 5px solid rgba(0, 0, 0, 0.7);
-      margin: 15px 0 0 0;
-    }
-    .foot {
-      background-color: rgba(0, 0, 0, 0.1);
-    }
-    .foot h2,
-    .foot h3 {
-      font-weight: 700;
-      line-height: normal;
-      text-align: justify;
-      width: 44.5vw;
-    }
-    .foot h2 {
-      font-size: 1.55vw;
-      text-align: center;
-    }
-    .foot h3 {
-      font-size: 1.25vw;
-    }
-    .foot .item {
-      margin: 1.35vw 0 0 4.5vw;
-      width: 91vw;
-      display: flex;
-    }
-    .foot ul {
-      font-size: 1vw;
-      margin-left: auto;
-      width: 44.5vw;
-    }
-    .foot li a {
-      color: #000;
-    }
-    .foot ul :nth-child(1),
-    .foot ul :nth-child(2),
-    .foot ul :nth-child(3) {
-      line-height: 20.8px;
-    }
-    .foot ul :nth-child(4) a {
-      line-height: 22.1px;
-    }
-    .foot ul :nth-child(5) {
-      line-height: 22.1px;
-    }
-    .footIcon {
-      display: flex;
-      margin: 2vw 0 0 4.5vw;
-      width: 91vw;
-      padding: 0 0 1.125vw 0;
-    }
-    .footIcon img {
-      width: 2.25vw;
-      height: 2.25vw;
-      margin: 0 1vw 0 0;
-    }
-    .footIcon a {
-      font-size: 0.9vw;
-      color: #000;
-      margin-top: auto;
-    }
-    .footIcon p {
-      font-size: 1vw;
-      margin-top: auto;
-      margin-left: auto;
-    }
-    @media screen and (min-width: 992px) {
-      .navbar-collapse {
-        flex-grow: inherit;
-        margin: auto;
-      }
-      .navbar-expand-lg .navbar-nav .nav-link {
-        padding-right: 1.3rem;
-        padding-left: 1.3rem;
-      }
-      .navbar.navbar-expand-lg.navbar-light.bg-light {
-        position: sticky;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 2;
-      }
-      .swiper-slide .btn a:hover {
-        background-color: rgba(4, 81, 132, 1);
-        transition: 1s;
-      }
-      .threeM {
-        width: 184px;
-        height: 53px;
-      }
-      .threeM2 {
-        width: 159px;
-        height: 53px;
-      }
-      .threeM3 {
-        width: 187px;
-        height: 64px;
-      }
-      .threeM4 {
-        width: 180px;
-        height: 61px;
-      }
-      .threeM5 {
-        width: 159px;
-        height: 50px;
-      }
-      .threeM6 {
-        width: 105px;
-        height: 70px;
-      }
-      .threeM7 {
-        width: 163px;
-        height: 45px;
-      }
-      .threeM8 {
-        width: 123px;
-        height: 70px;
-      }
-
-      .foot .item {
-        margin: 1.35vw 0 0 20vw;
-        width: 25vw;
-        display: block;
-      }
-      .foot h2,
-      .foot h3 {
-        width: 25vw;
-      }
-      .foot h3 {
-        margin: 0 0 2.8vw;
-      }
-      .foot ul {
-        width: 60vw;
-      }
-      .foot ul :nth-child(1),
-      .foot ul :nth-child(2),
-      .foot ul :nth-child(3) {
-        line-height: 1.35vw;
-      }
-      .foot ul :nth-child(4) a {
-        line-height: 1.4vw;
-      }
-      .foot ul :nth-child(5) {
-        line-height: 1.4vw;
-      }
-      .footIcon {
-        margin: 2vw 0 0 20vw;
-        width: 60vw;
-      }
-    }
-
-    @media screen and (min-width: 767px) {
-      .city::before {
-        height: 126px;
-        font-size: 22px;
-        padding: 0 30px;
-      }
-      .towM {
-        width: 46%;
-        height: 31.9%;
-      }
-      .towM2 {
-        width: 39%;
-        height: 54.42%;
-      }
-      .towM3 {
-        width: 46.3%;
-        height: 40%;
-      }
-      .towM4 {
-        width: 46%;
-        height: 24.2%;
-      }
-      .towM5 {
-        width: 57.5%;
-        height: 28%;
-      }
-      .towM6 {
-        width: 18%;
-        height: 40%;
-      }
-      .towM7 {
-        width: 65.5%;
-        height: 28%;
-      }
-      .towM8 {
-        width: 52.5%;
-        height: 40%;
-      }
-      .message-1 ul,
-      .message-2 ul {
-        margin-right: 0;
-      }
-    }
-    @media screen and (max-width: 335px) {
-      .navbar-toggler {
-        padding: 0.25em 0.025em;
-      }
-      .navbar-brand::before {
-        margin: 0 1px 0 0;
-      }
-      .supTxt {
-        margin-left: -14px;
-      }
-    }
-    @media screen and (max-width: 520px) {
-      .swiper-slide .btn {
-        display: none;
-      }
-    }
-    @media screen and (max-width: 767px) {
-      .threeM {
-        width: 184px;
-        height: 53px;
-      }
-      .threeM2 {
-        width: 159px;
-        height: 53px;
-      }
-      .threeM3 {
-        width: 187px;
-        height: 64px;
-      }
-      .threeM4 {
-        width: 180px;
-        height: 61px;
-      }
-      .threeM5 {
-        width: 159px;
-        height: 50px;
-      }
-      .threeM6 {
-        width: 105px;
-        height: 70px;
-      }
-      .threeM7 {
-        width: 163px;
-        height: 45px;
-      }
-      .threeM8 {
-        width: 123px;
-        height: 70px;
-      }
-      .row :nth-child(1) .message-3 img {
-        position: relative;
-        left: 10px;
-      }
-    }
-  </style>
   <body>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
@@ -664,7 +26,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <div class="box">
+        <div class="logo">
           <a class="navbar-brand" href="#"> Build School </a>
           <a class="supTxt" href="#"> developer career builder </a>
         </div>
@@ -717,11 +79,6 @@
             <p>START CODING AND GET COACHED FROM</p>
             <p>MENTORS</p>
           </h3>
-          <div class="btn">
-            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
-            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
-            <a href="#">招生說明會報名</a>
-          </div>
         </div>
         <div class="swiper-slide">
           <h2>
@@ -729,11 +86,6 @@
             <p>才能積累經驗</p>
           </h2>
           <h3>PRACTICE MAKES PERFECT</h3>
-          <div class="btn">
-            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
-            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
-            <a href="#">招生說明會報名</a>
-          </div>
         </div>
         <div class="swiper-slide">
           <h2>
@@ -741,11 +93,6 @@
             <p>門票是給想成為軟體工程師的你</p>
           </h2>
           <h3>BUILD SCHOOL - DEVELOPER CAREER BUILDER</h3>
-          <div class="btn">
-            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
-            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
-            <a href="#">招生說明會報名</a>
-          </div>
         </div>
         <div class="swiper-slide">
           <h2>
@@ -756,11 +103,6 @@
             <p>BUILD SOMETHING AND SOLVE THE PROBLEM,</p>
             <p>THAT'S MY STYLE</p>
           </h3>
-          <div class="btn">
-            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
-            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
-            <a href="#">招生說明會報名</a>
-          </div>
         </div>
         <div class="swiper-slide">
           <h2>
@@ -768,20 +110,10 @@
             <p>只有滿滿的程式碼</p>
           </h2>
           <h3>NO TEST BUT YOUR CODES</h3>
-          <div class="btn">
-            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
-            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
-            <a href="#">招生說明會報名</a>
-          </div>
         </div>
         <div class="swiper-slide">
           <h2>BUILD SCHOOL</h2>
           <h3>Build School 是軟體開發教育的先鋒 為您打造更有競爭力的職涯</h3>
-          <div class="btn">
-            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
-            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
-            <a href="#">招生說明會報名</a>
-          </div>
         </div>
         <div class="swiper-slide">
           <h2>
@@ -792,11 +124,6 @@
             <p>START CODING AND GET COACHED</p>
             <p>FROM MENTORS</p>
           </h3>
-          <div class="btn">
-            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
-            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
-            <a href="#">招生說明會報名</a>
-          </div>
         </div>
         <div class="swiper-slide">
           <h2>BUILD SCHOOL</h2>
@@ -804,22 +131,24 @@
             <p>Build School is a pioneer of software developer</p>
             <p>education and career builder for engineers</p>
           </h3>
-          <div class="btn">
-            <a href="#">台北班簡介及報名(2021/5/3開課)</a>
-            <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
-            <a href="#">招生說明會報名</a>
-          </div>
         </div>
       </div>
       <div class="swiper-pagination"></div>
+      <div class="mainNav">
+        <div class="btn">
+          <a href="#">台北班簡介及報名(2021/5/3開課)</a>
+          <a class="cr" href="#">新竹班簡介(2021/11月後)</a>
+          <a href="#">招生說明會報名</a>
+        </div>
+      </div>
     </div>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-      var swiper = new Swiper(".mySwiper", {
+      var swiper = new Swiper('.mySwiper', {
         pagination: {
-          el: ".swiper-pagination",
+          el: '.swiper-pagination',
         },
-      });
+      })
     </script>
 
     <div class="container">
@@ -866,11 +195,11 @@
           </p>
         </div>
         <div class="col-12 col-md-6">
-          <img src="asset 2.png" alt="" />
+          <img src="/image/asset 2.png" alt="" />
           <h3 class="item-1-h3">動手實作才是真學習</h3>
         </div>
         <div class="col-12 col-md-6">
-          <img src="asset 3.png" alt="" />
+          <img src="/image/asset 3.png" alt="" />
           <h3 class="item-1-h3">就業銜接</h3>
         </div>
         <div class="col-12 col-md-6">
@@ -891,7 +220,7 @@
           </p>
         </div>
         <div class="col-12 col-md-6">
-          <img src="asset 4.png" alt="" />
+          <img src="/image/asset 4.png" alt="" />
           <h3 class="item-1-h3">連結及影響力</h3>
         </div>
       </div>
@@ -905,7 +234,7 @@
           <div class="col-12 col-md-3">
             <div class="message-1">
               <p>第 1 - 4 個月</p>
-              <div><img class="m" src="message-m.png" alt="" /></div>
+              <div><img class="m" src="/image/message-m.png" alt="" /></div>
               <h3>程式基礎教學</h3>
               <ul>
                 <li>業界實戰講師</li>
@@ -916,7 +245,7 @@
           <div class="col-12 col-md-3">
             <div class="message-1">
               <p>第 5 - 6 個月</p>
-              <div><img class="m2" src="message-m2.png" alt="" /></div>
+              <div><img class="m2" src="/image/message-m2.png" alt="" /></div>
               <h3>專案及作品導向實作</h3>
               <ul>
                 <li>Web / App 作品開發 - 企業導師指導</li>
@@ -931,7 +260,7 @@
           <div class="col-12 col-md-3">
             <div class="message-1">
               <p>第 6 - 7 月</p>
-              <div><img class="m3" src="message-m3.png" alt="" /></div>
+              <div><img class="m3" src="/image/message-m3.png" alt="" /></div>
               <h3>作品發表</h3>
               <ul>
                 <li>簡報 Demo 及溝通技巧</li>
@@ -944,7 +273,7 @@
             <div class="message-1">
               <p>未來及展望</p>
               <div class="A">
-                <img class="m4" src="message-m4.png" alt="" />
+                <img class="m4" src="/image/message-m4.png" alt="" />
               </div>
               <h3>就業及企業導師諮詢</h3>
               <ul>
@@ -966,8 +295,8 @@
           <div class="col-12 col-md-3">
             <div class="message-2">
               <div>
-                <img class="towM" src="message2-m.png" alt="" />
-                <img class="towM2" src="message2-m2.png" alt="" />
+                <img class="towM" src="/image/message2-m.png" alt="" />
+                <img class="towM2" src="/image/message2-m2.png" alt="" />
               </div>
               <h3>版本控管及程式碼管理</h3>
               <ul>
@@ -984,8 +313,8 @@
           <div class="col-12 col-md-3">
             <div class="message-2">
               <div>
-                <img class="towM3" src="message2-m3.png" alt="" />
-                <img class="towM4" src="message2-m4.png" alt="" />
+                <img class="towM3" src="/image/message2-m3.png" alt="" />
+                <img class="towM4" src="/image/message2-m4.png" alt="" />
               </div>
               <h3>作品開發及團隊管理</h3>
               <ul>
@@ -1004,8 +333,8 @@
           <div class="col-12 col-md-3">
             <div class="message-2">
               <div>
-                <img class="towM5" src="message2-m5.png" alt="" />
-                <img class="towM6" src="message2-m6.png" alt="" />
+                <img class="towM5" src="/image/message2-m5.png" alt="" />
+                <img class="towM6" src="/image/message2-m6.png" alt="" />
               </div>
               <h3>雲端平台及服務</h3>
               <ul>
@@ -1021,8 +350,8 @@
           <div class="col-12 col-md-3">
             <div class="message-2">
               <div>
-                <img class="towM7" src="message2-m7.png" alt="" />
-                <img class="towM8" src="message2-m8.png" alt="" />
+                <img class="towM7" src="/image/message2-m7.png" alt="" />
+                <img class="towM8" src="/image/message2-m8.png" alt="" />
               </div>
               <h3>團隊溝通協作及通知</h3>
               <ul>
@@ -1047,42 +376,42 @@
         <div class="row">
           <div class="col-12 col-md-3">
             <div class="message-3">
-              <img class="threeM" src="message3-m.png" alt="" />
+              <img class="threeM" src="/image/message3-m.png" alt="" />
             </div>
           </div>
           <div class="col-12 col-md-3">
             <div class="message-3">
-              <img class="threeM2" src="message3-m2.png" alt="" />
+              <img class="threeM2" src="/image/message3-m2.png" alt="" />
             </div>
           </div>
           <div class="col-12 col-md-3">
             <div class="message-3">
-              <img class="threeM3" src="message3-m3.png" alt="" />
+              <img class="threeM3" src="/image/message3-m3.png" alt="" />
             </div>
           </div>
           <div class="col-12 col-md-3">
             <div class="message-3">
-              <img class="threeM4" src="message3-m4.png" alt="" />
+              <img class="threeM4" src="/image/message3-m4.png" alt="" />
             </div>
           </div>
           <div class="col-12 col-md-3">
             <div class="message-3">
-              <img class="threeM5" src="message3-m5.png" alt="" />
+              <img class="threeM5" src="/image/message3-m5.png" alt="" />
             </div>
           </div>
           <div class="col-12 col-md-3">
             <div class="message-3">
-              <img class="threeM6" src="message3-m6.png" alt="" />
+              <img class="threeM6" src="/image/message3-m6.png" alt="" />
             </div>
           </div>
           <div class="col-12 col-md-3">
             <div class="message-3">
-              <img class="threeM7" src="message3-m7.png" alt="" />
+              <img class="threeM7" src="/image/message3-m7.png" alt="" />
             </div>
           </div>
           <div class="col-12 col-md-3">
             <div class="message-3">
-              <img class="threeM8" src="message3-m8.png" alt="" />
+              <img class="threeM8" src="/image/message3-m8.png" alt="" />
             </div>
           </div>
         </div>
@@ -1109,8 +438,8 @@
           </ul>
         </div>
         <div class="footIcon">
-          <a href="#"><img src="footI.png" alt="" /></a>
-          <a href="#"><img src="footI2.png" alt="" /></a>
+          <a href="#"><img src="/image/footI.png" alt="" /></a>
+          <a href="#"><img src="/image/footI2.png" alt="" /></a>
           <a href="#">隱私權宣告</a>
           <p>© 2021 by Build School</p>
         </div>
