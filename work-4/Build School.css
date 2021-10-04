@@ -33,7 +33,7 @@ body * {
   content: '';
   width: 54px;
   height: 59px;
-  background-image: url(/image/Logo.png);
+  background-image: url(./image/Logo.png);
   background-size: cover;
   margin: 0 10px 0 0;
 }
@@ -134,7 +134,7 @@ body * {
   content: '我們的講師及企業導師擁有在這些公司的工作經歷、擔任主管或資深工程師';
 }
 .city {
-  background-image: url(/image/ct.png);
+  background-image: url(./image/ct.png);
   background-size: cover;
 }
 
@@ -327,34 +327,34 @@ body * {
   font-size: 1.2vw;
 }
 .swiper-wrapper .swiper-slide:nth-child(1) {
-  background-image: url(/image/titleM.png);
+  background-image: url(./image/titleM.png);
 }
 .swiper-wrapper .swiper-slide:nth-child(2) {
-  background-image: url(/image/titleM2.png);
+  background-image: url(./image/titleM2.png);
 }
 .swiper-wrapper .swiper-slide:nth-child(3) {
-  background-image: url(/image/titleM3.png);
+  background-image: url(./image/titleM3.png);
 }
 .swiper-wrapper .swiper-slide:nth-child(3) h3 {
   background-color: rgba(4, 81, 132, 0.6);
   padding: 0.25vw 1.5vw;
 }
 .swiper-wrapper .swiper-slide:nth-child(4) {
-  background-image: url(/image/titleM4.png);
+  background-image: url(./image/titleM4.png);
 }
 .swiper-wrapper .swiper-slide:nth-child(4) h2 {
   padding: 0 2.5vw;
   background-color: rgba(4, 81, 132, 0.6);
 }
 .swiper-wrapper .swiper-slide:nth-child(5) {
-  background-image: url(/image/titleM5.png);
+  background-image: url(./image/titleM5.png);
 }
 .swiper-wrapper .swiper-slide:nth-child(5) h2 {
   background-color: rgba(4, 81, 132, 0.6);
   padding: 0 2.5vw;
 }
 .swiper-wrapper .swiper-slide:nth-child(6) {
-  background-image: url(/image/titleM6.png);
+  background-image: url(./image/titleM6.png);
 }
 .swiper-wrapper .swiper-slide:nth-child(6) h2 {
   font-size: 6.1vw;
@@ -363,14 +363,14 @@ body * {
   font-size: 1.59vw;
 }
 .swiper-wrapper .swiper-slide:nth-child(7) {
-  background-image: url(/image/titleM7.png);
+  background-image: url(./image/titleM7.png);
 }
 .swiper-wrapper .swiper-slide:nth-child(7) h3 {
   padding: 0 1.5vw;
   background-color: rgba(4, 81, 132, 0.6);
 }
 .swiper-wrapper .swiper-slide:nth-child(8) {
-  background-image: url(/image/titleM8.png);
+  background-image: url(./image/titleM8.png);
 }
 .swiper-wrapper .swiper-slide:nth-child(8) h2 {
   font-size: 6.1vw;
